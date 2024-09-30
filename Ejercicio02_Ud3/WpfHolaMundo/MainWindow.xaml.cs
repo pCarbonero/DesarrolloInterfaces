@@ -24,7 +24,7 @@ namespace WpfHolaMundo
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ClsPersona pers = new ClsPersona();
+            ClsPersona pers = new ClsPersona(); //hola
         }
     }
 }
