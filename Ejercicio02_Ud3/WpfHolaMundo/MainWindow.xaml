@@ -7,7 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Height="69" Margin="311,233,0,0" VerticalAlignment="Top" Width="134" Click="Button_Click"/>
+        <Button Content="Saludar" HorizontalAlignment="Left" Height="22" Margin="183,186,0,0" VerticalAlignment="Top" Width="87" Click="Button_Click" Name="btnSaludar"/>
+        <TextBox HorizontalAlignment="Left" Margin="175,127,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="txtNombre"/>
+        <TextBlock HorizontalAlignment="Left" Margin="112,128,0,0" TextWrapping="Wrap" Text="Nombre:" VerticalAlignment="Top"/>
+        <Label Content="El texto no está bien introducido" HorizontalAlignment="Left" Margin="339,123,0,0" VerticalAlignment="Top" Width="184" Visibility="Hidden" Name="lbError" Foreground="Red" FontWeight="Bold" FontStyle="Italic"/>
 
     </Grid>
 </Window>

@@ -24,7 +24,17 @@ namespace WpfHolaMundo
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ClsPersona pers = new ClsPersona(); //hola
+            String nombre = txtNombre.Text;
+            if (nombre != null && !nombre.Equals(""))
+            {
+                ClsPersona pers = new ClsPersona(nombre);
+                MessageBox.Show("Hola " + pers.nombre);
+                lbError.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                lbError.Visibility = Visibility.Visible;
+            }
         }
     }
 }
