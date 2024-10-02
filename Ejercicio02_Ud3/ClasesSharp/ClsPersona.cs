@@ -4,6 +4,8 @@
     {
         #region Atributos
         private String nombre;
+        private int edad;
+        private DateTime fechaNac;
         #endregion
 
         #region constructores
@@ -23,6 +25,18 @@
         {
             get { return nombre; }
             set { nombre = value; }
+        }
+
+        public int Edad
+        {
+            get { return edad; }
+            set { edad = value; }
+        }
+
+        public DateTime FechaNac
+        {
+            get { return fechaNac; }
+            set { fechaNac = value; }
         }
         #endregion
     }
