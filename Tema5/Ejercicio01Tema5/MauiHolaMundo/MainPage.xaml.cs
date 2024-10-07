@@ -11,20 +11,27 @@ namespace MauiHolaMundo
             InitializeComponent();
         }
 
-        private void ButtonClicked(object sender, EventArgs e)
+        /// <summary>
+        /// Funcion asociada al click del boton saludar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void ButtonClicked(object sender, EventArgs e)
         {
-           ClsPersona pers = new ClsPersona();
-           pers.Nombre = entry.Text;
-          // string result = await DisplayPromptAsync("Apellidos", "¿Cual es su apellido?");
+            ClsPersona pers = new ClsPersona(); 
+            pers.Nombre = entryN.Text;
+            pers.Apellidos = await DisplayPromptAsync("Apelidos", "Introduce tus apellidos");
 
-            /* count++;
-
-             if (count == 1)
-                 CounterBtn.Text = $"Clicked {count} time";
-             else
-                 CounterBtn.Text = $"Clicked {count} times";
-
-             SemanticScreenReader.Announce(CounterBtn.Text);*/
+            if (!String.IsNullOrEmpty(pers.Nombre) && !String.IsNullOrEmpty(pers.Apellidos))
+            {
+                saludo.Text = $"Hola {pers.Nombre} {pers.Apellidos}";
+                saludo.TextColor = Colors.Black;
+            }
+            else
+            {
+                saludo.Text = $"Nombre o apellido mal introducido ";
+                saludo.TextColor = Colors.Red;
+            }
         }
     }
 

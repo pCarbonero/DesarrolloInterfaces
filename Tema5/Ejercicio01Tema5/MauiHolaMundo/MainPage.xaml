@@ -20,10 +20,19 @@
                 IsVisible="Hidden"/>
 
             <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
+                Text="BIENVENIDO AL HOLA TU FFFFF NOMBRE"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+            <Entry x:Name="entryN"
+                   Placeholder="Inserta tu nombre "/>
+    
+
+            <Label
+                x:Name="saludo"
+                Text=""
+                Style="{StaticResource SubHeadline}"/>
 
             <Button
                 x:Name="CounterBtn"
@@ -31,11 +40,6 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="ButtonClicked"
                 HorizontalOptions="Fill" />
-
-            <Entry x:Name="entry"
-                Placeholder="Enter text"
-                TextChanged="OnEntryTextChanged"              
-                Completed="OnEntryCompleted" />
         </VerticalStackLayout>
     </ScrollView>
 
