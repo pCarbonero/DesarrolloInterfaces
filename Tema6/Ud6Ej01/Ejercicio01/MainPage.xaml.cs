@@ -37,6 +37,8 @@
                     mainStack.Children.Remove(btnBoton1);
                     btnBoton2.Text = "Crear controles en tiempo de ejecución mola";
                     btnBoton2.Clicked -= (sender, args) => { };
+                    btnBoton2.MaximumHeightRequest = 200;
+                    btnBoton2.MaximumWidthRequest = 500;
 
                 };
 
