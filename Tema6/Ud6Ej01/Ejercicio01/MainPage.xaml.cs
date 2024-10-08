@@ -3,23 +3,47 @@
     public partial class MainPage : ContentPage
     {
         int count = 0;
+        Button button;
 
         public MainPage()
         {
             InitializeComponent();
         }
-
-        private void OnCounterClicked(object sender, EventArgs e)
+        /// <summary>
+        /// Funcion que hace referencia a cuando se pulsa el boton 2
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void btn2Clicked(object sender, EventArgs args)
         {
-            count++;
+            if (button == null)
+            {
+                button = new Button
+                {
+                    Text = "Boton 3",
+                    VerticalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.Center,
+                    MaximumHeightRequest = 70,
+                    MaximumWidthRequest = 200,
+                    FontFamily = "Verdana",
+                    FontSize = 16,
+                    FontAttributes = FontAttributes.Bold,
+                    BorderColor = Colors.Yellow,
+                    Margin = 30,
+                    BackgroundColor = Colors.Blue
+                };
+                    button.Clicked += (sender, args) =>
+                {
+                    mainStack.Children.Remove(btnBoton1);
+                    btnBoton2.Text = "Crear controles en tiempo de ejecución mola";
+                    btnBoton2.Clicked -= (sender, args) => { };
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+                };
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+                mainStack.Children.Add(button);
+            }
+           
         }
     }
-
 }
+
