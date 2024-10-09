@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio03.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label Text="ONEWAY"/>
+            <Entry x:Name="texto1" BackgroundColor="IndianRed"/>
+
+            <Entry BindingContext="{x:Reference texto1}" Text="{Binding Path=Text, Mode=OneWay}"
+                   BackgroundColor="IndianRed"/>
+
+            <Label Text="TWOWAY"/>
+            <Entry x:Name="texto2" BackgroundColor="AliceBlue"/>
+
+            <Entry BindingContext="{x:Reference texto2}" Text="{Binding Path=Text, Mode=TwoWay}"
+                   BackgroundColor="AliceBlue"/>
+
+            <Label Text="ONETIME"/>
+            <Entry x:Name="texto3" BackgroundColor="LightGreen"/>
+
+            <Entry BindingContext="{x:Reference texto3}" Text="{Binding Path=Text, Mode=OneTime}"
+                   BackgroundColor="LightGreen"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

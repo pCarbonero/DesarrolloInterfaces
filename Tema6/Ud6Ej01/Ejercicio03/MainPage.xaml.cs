@@ -1,4 +1,4 @@
-﻿namespace MauiApp1
+﻿namespace Ejercicio03
 {
     public partial class MainPage : ContentPage
     {

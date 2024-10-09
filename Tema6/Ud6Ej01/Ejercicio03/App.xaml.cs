@@ -1,4 +1,4 @@
-﻿namespace MauiApp1
+﻿namespace Ejercicio03
 {
     public partial class App : Application
     {
@@ -6,9 +6,7 @@
         {
             InitializeComponent();
 
-            //MainPage = new AppShell();
-
-            MainPage = new Page2();
+            MainPage = new AppShell();
         }
     }
 }
