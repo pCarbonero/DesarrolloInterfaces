@@ -5,11 +5,10 @@
 
     <ScrollView>
         <VerticalStackLayout
+            x:Name="VerticalStack"
             Padding="30,0"
             Spacing="25">
-            <ScrollView>
-                <StackLayout x:Name="mainStack">
-                    <Button x:Name="btnBoton1" 
+            <Button x:Name="btnBoton1" 
                         Text="Boton 1" 
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
@@ -22,21 +21,19 @@
                         Margin="30"
                         BackgroundColor="Blue"/>
 
-                    <Button x:Name="btnBoton2" Clicked="btn2Clicked">
-                        <Button.Text>Boton 2</Button.Text>
-                        <Button.HorizontalOptions>Center</Button.HorizontalOptions>
-                        <Button.VerticalOptions>Center</Button.VerticalOptions>
-                        <Button.MaximumHeightRequest>70</Button.MaximumHeightRequest>
-                        <Button.MaximumWidthRequest>200</Button.MaximumWidthRequest>
-                        <Button.FontFamily>Verdana</Button.FontFamily>
-                        <Button.FontSize>16</Button.FontSize>
-                        <Button.FontAttributes>Bold</Button.FontAttributes>
-                        <Button.BorderColor>Yellow</Button.BorderColor>
-                        <Button.Margin>30</Button.Margin>
-                        <Button.BackgroundColor>Blue</Button.BackgroundColor>
-                    </Button>
-                </StackLayout>
-            </ScrollView>
+            <Button x:Name="btnBoton2" Clicked="btn2Clicked">
+                <Button.Text>Boton 2</Button.Text>
+                <Button.HorizontalOptions>Center</Button.HorizontalOptions>
+                <Button.VerticalOptions>Center</Button.VerticalOptions>
+                <Button.MaximumHeightRequest>70</Button.MaximumHeightRequest>
+                <Button.MaximumWidthRequest>200</Button.MaximumWidthRequest>
+                <Button.FontFamily>Verdana</Button.FontFamily>
+                <Button.FontSize>16</Button.FontSize>
+                <Button.FontAttributes>Bold</Button.FontAttributes>
+                <Button.BorderColor>Yellow</Button.BorderColor>
+                <Button.Margin>30</Button.Margin>
+                <Button.BackgroundColor>Blue</Button.BackgroundColor>
+            </Button>
         </VerticalStackLayout>
     </ScrollView>
 

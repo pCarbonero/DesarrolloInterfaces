@@ -3,7 +3,7 @@
     public partial class MainPage : ContentPage
     {
         int count = 0;
-        Button button;
+        bool btnCreado = false;
 
         public MainPage()
         {
@@ -16,9 +16,10 @@
         /// <param name="args"></param>
         public void btn2Clicked(object sender, EventArgs args)
         {
-            if (button == null)
+            if (!btnCreado)
             {
-                button = new Button
+                btnCreado = true;
+                Button button = new Button
                 {
                     Text = "Boton 3",
                     VerticalOptions = LayoutOptions.Center,
@@ -32,9 +33,10 @@
                     Margin = 30,
                     BackgroundColor = Colors.Blue
                 };
-                    button.Clicked += (sender, args) =>
+
+                button.Clicked += (sender, args) =>
                 {
-                    mainStack.Children.Remove(btnBoton1);
+                    VerticalStack.Children.Remove(btnBoton1);
                     btnBoton2.Text = "Crear controles en tiempo de ejecución mola";
                     btnBoton2.Clicked -= (sender, args) => { };
                     btnBoton2.MaximumHeightRequest = 200;
@@ -42,9 +44,8 @@
 
                 };
 
-                mainStack.Children.Add(button);
+                VerticalStack.Children.Add(button);
             }
-           
         }
     }
 }
