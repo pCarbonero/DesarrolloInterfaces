@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio04.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <DatePicker x:Name="FechaEntrada" 
+                        MinimumDate="10/10/2024"/>
+            
+            <DatePicker BindingContext="{x:Reference FechaEntrada}"
+                        MinimumDate="{Binding Date}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
