@@ -3,20 +3,88 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ejercicio05.Views.Pokemon"
              Title="Pokemon">
-    <VerticalStackLayout
-        Padding="30,0"
-         Spacing="25">
-        
-        <Image
-            Source="eevee.png"
-            HeightRequest="100"/>
+    <ScrollView>
+        <VerticalStackLayout HorizontalOptions="Start">
+            <Label Padding="20,20,0,0"
+                   FontSize="30"
+                   FontAttributes="Bold">Eevee</Label>
+            
+            <Grid Padding="20,0,0,0" >
+                <Image             
+                    Source="eevee.png"
+                    HeightRequest="100"/>
+            </Grid>
 
-        <Image
-            Source="pokeball.png"
-            HeightRequest="100"/>
+            <Label Padding="20,20,0,0"
+                   FontSize="30"
+                   FontAttributes="Bold">Bastiodon</Label>
 
-        <Image
-            Source="arceus.png"
-            HeightRequest="100"/>
-    </VerticalStackLayout>
+            <Grid Padding="20,0,0,0" >
+                <Image             
+                    Source="bastiodon.png"
+                    HeightRequest="100"/>
+            </Grid>
+
+            <Label Padding="20,20,0,0"
+                   FontSize="30"
+                   FontAttributes="Bold">Glaceon</Label>
+
+            <Grid Padding="20,0,0,0" >
+                <Image             
+                    Source="glaceon.png"
+                    HeightRequest="100"/>
+            </Grid>
+
+            <Label Padding="20,20,0,0"
+                   FontSize="30"
+                   FontAttributes="Bold">Rapidash</Label>
+
+            <Grid Padding="20,0,0,0" >
+                <Image             
+                    Source="rapidash.png"
+                    HeightRequest="100"/>
+            </Grid>
+
+            <Label Padding="20,20,0,0"
+                   FontSize="30"
+                   FontAttributes="Bold">Hydreigon</Label>
+
+            <Grid Padding="20,0,0,0" >
+                <Image             
+                    Source="hydreigon.png"
+                    HeightRequest="100"/>
+            </Grid>
+
+            <Label Padding="20,20,0,0"
+                   FontSize="30"
+                   FontAttributes="Bold">Emolga</Label>
+
+            <Grid Padding="20,0,0,0" >
+                <Image             
+                    Source="emolga.png"
+                    HeightRequest="100"/>
+            </Grid>
+
+            <Label Padding="20,20,0,0"
+                   FontSize="30"
+                   FontAttributes="Bold">Hoothoot</Label>
+
+            <Grid Padding="20,0,0,0" >
+                <Image             
+                    Source="hoothoot.png"
+                    HeightRequest="100"/>
+            </Grid>
+
+            <Label Padding="20,20,0,0"
+                   FontSize="30"
+                   FontAttributes="Bold">Dotler</Label>
+
+            <Grid Padding="20,0,0,0" >
+                <Image             
+                    Source="dotler.png"
+                    HeightRequest="100"/>
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

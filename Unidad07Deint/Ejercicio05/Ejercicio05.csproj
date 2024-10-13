@@ -58,9 +58,16 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\arceus.png" />
+	  <None Remove="Resources\Images\bastiodon.png" />
+	  <None Remove="Resources\Images\dotler.png" />
 	  <None Remove="Resources\Images\eevee.png" />
+	  <None Remove="Resources\Images\emolga.png" />
+	  <None Remove="Resources\Images\glaceon.png" />
+	  <None Remove="Resources\Images\hoothoot.png" />
+	  <None Remove="Resources\Images\hydreigon.png" />
 	  <None Remove="Resources\Images\N.png" />
 	  <None Remove="Resources\Images\pokeball.png" />
+	  <None Remove="Resources\Images\rapidash.png" />
 	  <None Remove="Resources\Images\restos.png" />
 	</ItemGroup>
 
