@@ -63,12 +63,15 @@
 	  <None Remove="Resources\Images\eevee.png" />
 	  <None Remove="Resources\Images\emolga.png" />
 	  <None Remove="Resources\Images\glaceon.png" />
+	  <None Remove="Resources\Images\help.png" />
 	  <None Remove="Resources\Images\hoothoot.png" />
 	  <None Remove="Resources\Images\hydreigon.png" />
 	  <None Remove="Resources\Images\N.png" />
+	  <None Remove="Resources\Images\pkmlogo.png" />
 	  <None Remove="Resources\Images\pokeball.png" />
 	  <None Remove="Resources\Images\rapidash.png" />
 	  <None Remove="Resources\Images\restos.png" />
+	  <None Remove="Resources\Images\settings.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -78,10 +81,28 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\Entrenadores.xaml">
+	  <Compile Update="Views\Lideres.xaml.cs">
+	    <DependentUpon>Lideres.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\AltosMandos.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Ayuda.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Configuracion.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Lideres.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Objetos.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ObjetosEvolutivos.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Pokemon.xaml">

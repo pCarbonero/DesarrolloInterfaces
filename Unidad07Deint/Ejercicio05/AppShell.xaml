@@ -4,9 +4,15 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Ejercicio05"
-    Shell.FlyoutBehavior="Disabled"
+    Shell.FlyoutBehavior="Flyout"
     Title="Ejercicio05"
     xmlns:views="clr-namespace:Ejercicio05.Views">
+
+    <Shell.FlyoutHeader>
+        <Image
+            Source="pkmlogo.png"
+            MaximumHeightRequest="200"/>
+    </Shell.FlyoutHeader>
 
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <Tab Title="Pokemon"
@@ -18,19 +24,31 @@
                           Icon="arceus.png"
                           ContentTemplate="{DataTemplate views:PokemonLegendario}" />
         </Tab>
-        <!--
-        Shell has implicit conversion operators that enable the Shell visual hierarchy to be simplified.
-        This is possible because a subclassed Shell object can only ever contain a FlyoutItem object or a TabBar object,
-        which can only ever contain Tab objects, which can only ever contain ShellContent objects.
-
-        The implicit conversion automatically wraps the ShellContent objects below in Tab objects.
-        -->
-        <ShellContent Title="Objetos"
-                      Icon="restos.png"
-                      ContentTemplate="{DataTemplate views:Objetos}" />
-        <ShellContent Title="Entrenadores"
+        <Tab Title="Objetos"
+             Icon="restos.png">
+            <ShellContent Title="Curativos"
+                          Icon="restos.png"
+                          ContentTemplate="{DataTemplate views:Objetos}" />
+            <ShellContent Title="Evolutivos"
+                          Icon="arceus.png"
+                          ContentTemplate="{DataTemplate views:ObjetosEvolutivos}" />
+        </Tab>
+        <Tab Title="Entrenadores"
+             Icon="restos.png">
+            <ShellContent Title="Líderes"
                       Icon="n.png"
-                      ContentTemplate="{DataTemplate views:Entrenadores}" />
+                      ContentTemplate="{DataTemplate views:Lideres}" />
+            <ShellContent Title="Altos mandos"
+                          Icon="arceus.png"
+                          ContentTemplate="{DataTemplate views:AltosMandos}" />
+        </Tab>
     </FlyoutItem>
+
+    <ShellContent Title="Ayuda"
+                      Icon="help.png"
+                      ContentTemplate="{DataTemplate views:Ayuda}" />
+    <ShellContent Title="Configuracion"
+                      Icon="settings.png"
+                      ContentTemplate="{DataTemplate views:Configuracion}" />
 
 </Shell>
