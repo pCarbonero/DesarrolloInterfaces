@@ -8,7 +8,7 @@ namespace Ejercicio02
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Pagina1());
+            MainPage = new NavigationPage(new MainPage());
         }
     }
 }

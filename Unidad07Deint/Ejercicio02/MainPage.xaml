@@ -9,7 +9,8 @@
             Spacing="25">
 
             <Entry></Entry>
-
+            <Button Clicked="onClicked"
+                      x:Name="Boton"/>
         </VerticalStackLayout>
     </ScrollView>
 
