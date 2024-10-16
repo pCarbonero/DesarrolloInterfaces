@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio01.MainPage">
+
+    <Border Stroke="Purple"
+            StrokeThickness="5"
+            StrokeShape="RoundRectangle 40,40,0,0"
+            Margin="10">
+        <StackLayout Margin="10" HorizontalOptions="Center" VerticalOptions="Center">
+            <Button Text="Boton1" MaximumHeightRequest="50" MaximumWidthRequest="100" Padding="10"/>
+            <Button Text="Boton2" MaximumHeightRequest="50" MaximumWidthRequest="100" Padding="10"/>
+            <Button Text="Boton3" MaximumHeightRequest="50" MaximumWidthRequest="100" Padding="10"/>
+        </StackLayout>
+    </Border>
+
+
+
+</ContentPage>

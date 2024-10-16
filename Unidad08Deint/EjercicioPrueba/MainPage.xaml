@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EjercicioPrueba.MainPage">
+
+    <Grid Margin="0,0,650,600">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0" Text="PrimaryColors"
+               Grid.RowSpan="3"/>
+        <BoxView Grid.Column="1"
+                 Color="Red" />
+        <Label Grid.Column="2" Text="SecondaryColors"
+               Grid.RowSpan="3"/>
+        <BoxView Grid.Column="3"
+         Color="Green" />
+        <BoxView Grid.Column="1" Grid.Row="1"
+         Color="Yellow" />
+        <BoxView Grid.Column="3" Grid.Row="1"
+        Color="Orange" />
+        <BoxView Grid.Column="1" Grid.Row="2"
+        Color="Blue" />
+        <BoxView Grid.Column="3" Grid.Row="2"
+        Color="Purple" />        
+    </Grid>
+
+</ContentPage>

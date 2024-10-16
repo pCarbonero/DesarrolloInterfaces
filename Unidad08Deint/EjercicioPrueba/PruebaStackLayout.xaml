@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EjercicioPrueba.PruebaStackLayout"
+             Title="PruebaStackLayout">
+    <HorizontalStackLayout>
+        <Label Text="Primary Colors"/>
+        <VerticalStackLayout>
+            <BoxView MinimumHeightRequest="50" MinimumWidthRequest="50" BackgroundColor="Red"/>
+            <BoxView MinimumHeightRequest="50" MinimumWidthRequest="50" BackgroundColor="Yellow"/>
+            <BoxView MinimumHeightRequest="50" MinimumWidthRequest="50" BackgroundColor="Blue"/>
+        </VerticalStackLayout>
+        <Label Text="Secondary Colors"/>
+        <VerticalStackLayout>
+            <BoxView MinimumHeightRequest="50" MinimumWidthRequest="50" BackgroundColor="Green"/>
+            <BoxView MinimumHeightRequest="50" MinimumWidthRequest="50" BackgroundColor="Orange"/>
+            <BoxView MinimumHeightRequest="50" MinimumWidthRequest="50" BackgroundColor="Purple"/>
+        </VerticalStackLayout>
+    </HorizontalStackLayout>
+
+
+</ContentPage>
