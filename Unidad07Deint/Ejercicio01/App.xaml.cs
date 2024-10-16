@@ -1,4 +1,6 @@
-﻿namespace Ejercicio01
+﻿using Ejercicio01.Views;
+
+namespace Ejercicio01
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new PaginaTabbed();
         }
     }
 }
