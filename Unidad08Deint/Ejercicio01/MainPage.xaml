@@ -7,10 +7,16 @@
             StrokeThickness="5"
             StrokeShape="RoundRectangle 40,40,0,0"
             Margin="10">
-        <StackLayout Margin="10" HorizontalOptions="Center" VerticalOptions="Center">
-            <Button Text="Boton1" MaximumHeightRequest="50" MaximumWidthRequest="100" Padding="10"/>
+        <StackLayout Margin="10" HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+            <Button Text="Boton1" MaximumHeightRequest="50" MaximumWidthRequest="100"
+                    BorderWidth="4" BorderColor="Black" Padding="10"/>
             <Button Text="Boton2" MaximumHeightRequest="50" MaximumWidthRequest="100" Padding="10"/>
             <Button Text="Boton3" MaximumHeightRequest="50" MaximumWidthRequest="100" Padding="10"/>
+            <HorizontalStackLayout Spacing="20">
+                <Label Text="Nombre"
+                       VerticalTextAlignment="End"/>
+                <Entry BackgroundColor="LightBlue"/>
+            </HorizontalStackLayout>
         </StackLayout>
     </Border>
 
