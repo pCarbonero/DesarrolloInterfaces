@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio04.MainPage">
+
+    <VerticalStackLayout Padding="10" Spacing="20">
+        <Border Stroke="Black" Padding="10">
+            <Label Text="MARCOS CASQUIN MELACASCO"/>
+        </Border>
+        <Border Stroke="Black" Padding="10">
+            <Label Text="MARCOS CASQUIN MELACASCO"/>
+        </Border>
+        <Border Stroke="Black" Padding="10">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <FlexLayout Wrap="Wrap" Direction="Row" Grid.Column="0" Margin="0,0,5,0">
+                    <Border Stroke="Black" HeightRequest="100" WidthRequest="100">
+                        <Label Text="Image 1" BackgroundColor="Orange" HeightRequest="100" 
+                        WidthRequest="100"/>
+                    </Border>
+                    <Border Stroke="Black" HeightRequest="100" WidthRequest="100">
+                        <Label Text="Image 1" BackgroundColor="LightBlue" HeightRequest="100" 
+                        WidthRequest="100"/>
+                    </Border>
+                    <Border Stroke="Black" HeightRequest="100" WidthRequest="100">
+                        <Label Text="Image 1" BackgroundColor="LightGreen" HeightRequest="100" 
+                        WidthRequest="100"/>
+                    </Border>
+                </FlexLayout>
+
+                <VerticalStackLayout Grid.Column="1">
+                    <Border Stroke="Black">
+                        <Label Text="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen."/>
+                    </Border>
+                    <Border Stroke="Black">
+                        <Label Text="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen."/>
+                    </Border>
+                    <Border Stroke="Black">
+                        <Label Text="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen."/>
+                    </Border>
+                    <Border Stroke="Black">
+                        <Label Text="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen."/>
+                    </Border>
+                </VerticalStackLayout>
+            </Grid>
+        </Border>
+    </VerticalStackLayout>
+
+</ContentPage>
