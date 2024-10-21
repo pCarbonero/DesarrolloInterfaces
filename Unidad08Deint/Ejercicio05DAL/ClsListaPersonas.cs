@@ -9,7 +9,7 @@ namespace Ejercicio05DAL
         /// Funcion que devuelve una lista con 10 objetos de tipo perposna 
         /// </summary>
         /// <returns>Listado de personas</returns>
-        public List<ClsPersona> listaPersonas()
+        static public List<ClsPersona> listaPersonas()
         {
             List<ClsPersona> lista = new List<ClsPersona>();
 
