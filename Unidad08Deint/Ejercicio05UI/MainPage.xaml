@@ -3,15 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ejercicio05UI.MainPage">
 
-    <ScrollView>
-        <ListView x:Name="listaView" ItemsSource="{Binding lista}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Nombre}"
-                              Detail="{Binding Apellidos}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </ScrollView>
+
+    <AbsoluteLayout>
+
+        <!-- Scrollable ListView -->
+        <ScrollView AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                AbsoluteLayout.LayoutFlags="All">
+            <VerticalStackLayout>
+                <ListView x:Name="listaView" ItemsSource="{Binding lista}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Nombre}"
+                                  Detail="{Binding Apellidos}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Floating Button -->
+        <Button Text="Editar"
+                Style="{StaticResource Circle}"
+            AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"/>
+    </AbsoluteLayout>
 
 </ContentPage>
