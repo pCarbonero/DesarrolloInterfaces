@@ -1,4 +1,5 @@
 ﻿using Ejercicio05ENT;
+using System.Collections.ObjectModel;
 
 namespace Ejercicio05DAL
 {
@@ -9,9 +10,9 @@ namespace Ejercicio05DAL
         /// Funcion que devuelve una lista con 10 objetos de tipo perposna 
         /// </summary>
         /// <returns>Listado de personas</returns>
-        static public List<ClsPersona> listaPersonas()
+        static public ObservableCollection<ClsPersona> listaPersonas()
         {
-            List<ClsPersona> lista = new List<ClsPersona>();
+            ObservableCollection<ClsPersona> lista = new ObservableCollection<ClsPersona>();
 
             ClsPersona p1 = new ClsPersona("Pablo", "Carbonero Almellones", 21);
             ClsPersona p2 = new ClsPersona("Lorenzo Jesús", "Bellido Ballena", 19);

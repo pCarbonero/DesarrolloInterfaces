@@ -5,11 +5,12 @@ using System.Collections.ObjectModel;
 namespace Ejercicio05UI
 {
     public partial class MainPage : ContentPage
-    {
-        public List<ClsPersona> lista;
+    {       
         public MainPage()
         {
             InitializeComponent();
+
+            ObservableCollection<ClsPersona> lista = new ObservableCollection<ClsPersona>();
 
             lista = ClsListaPersonas.listaPersonas();
 

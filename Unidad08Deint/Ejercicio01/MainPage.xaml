@@ -15,7 +15,7 @@
             <HorizontalStackLayout Spacing="20">
                 <Label Text="Nombre"
                        VerticalTextAlignment="End"/>
-                <Entry BackgroundColor="LightBlue"/>
+                <Entry BackgroundColor="LightBlue" WidthRequest="120"/>
             </HorizontalStackLayout>
         </StackLayout>
     </Border>
