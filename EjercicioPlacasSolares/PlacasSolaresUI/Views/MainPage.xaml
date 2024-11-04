@@ -45,7 +45,11 @@
                             Text="{Binding Password, Mode=TwoWay}"/>
                     <Button Text="Entrar"
                             BackgroundColor="OrangeRed"
-                            MaximumWidthRequest="100"/>
+                            MaximumWidthRequest="100"
+                            Clicked="onClick"/>
+                    <Label x:Name="textError"
+                        Text="Rellena los campos correctamente"
+                           IsVisible="False"/>
                 </VerticalStackLayout>
             </Border>
         </Grid>

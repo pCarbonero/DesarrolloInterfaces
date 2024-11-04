@@ -9,7 +9,7 @@ namespace PlacasSolaresUI
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new ListaCitas());
+            MainPage = new NavigationPage(new MainPage());
         }
     }
 }

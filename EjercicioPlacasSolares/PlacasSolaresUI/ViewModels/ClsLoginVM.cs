@@ -35,7 +35,7 @@ namespace PlacasSolaresUI.ViewModels
         /// Metodo privado que devuelve si es posible o no logearse
         /// </summary>
         /// <returns>boolean si se puede o no</returns>
-        private bool correctLogIn()
+        public bool correctLogIn()
         {
             bool isCorrect = false;
 

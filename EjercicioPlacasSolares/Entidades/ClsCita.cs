@@ -13,18 +13,21 @@ namespace Entidades
         public TimeOnly Hora { get; set; }
         public bool EsApta { get; set; }
         public string Observaciones { get; set; }
-        public ClsCliente Cliente { get; set; }
+        public string NombreCliente { get; set; }
+        public string Direccion { get; set; }
         #endregion
 
         #region Constructores
         public ClsCita() { }
-        public ClsCita(DateTime fecha, TimeOnly hora, bool esApta, string observaciones, ClsCliente cliente)
+        public ClsCita(DateTime fecha, TimeOnly hora, bool esApta, 
+            string observaciones, string nombreCliente, string direccion)
         {
             Fecha = fecha;
             Hora = hora;
             EsApta = esApta;
             Observaciones = observaciones;
-            Cliente = cliente;
+            NombreCliente = nombreCliente;
+            Direccion = direccion;
         }
 
         #endregion

@@ -6,4 +6,9 @@ public partial class ListaCitas : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	public void onItemSelected(object sender, SelectedItemChangedEventArgs args)
+	{
+        Navigation.PushAsync(new CitaDetalle());
+    }
 }

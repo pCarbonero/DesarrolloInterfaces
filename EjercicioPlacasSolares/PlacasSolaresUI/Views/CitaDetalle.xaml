@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:PlacasSolaresUI.ViewModels"
+             x:Class="PlacasSolaresUI.Views.CitaDetalle"
+             Title="CitaDetalle">
+    <ContentPage.BindingContext>
+        <vm:CitaDetalleVM/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <Label Text="{Binding Cita.NombreCliente}"
+                   FontSize="30"
+                   FontAttributes="Bold"/>
+        <HorizontalStackLayout>
+            <Label Text="{Binding Cita.Direccion}"
+                   FontSize="30"
+                   FontAttributes="Bold"/>
+            <Button Text="Ubicacion" 
+                    Clicked="onClickLocation"/>
+        </HorizontalStackLayout>
+        <Label Text="Observaciones: "/>
+        <Border Stroke="Black">
+            <Editor Text="{Binding Cita.Observaciones}" 
+        MinimumHeightRequest="200"/>
+        </Border>
+        <Label Text="APTA / NO APTA: "/>
+        <CheckBox IsChecked="{Binding Cita.EsApta}"/>
+        <Button Text="Añadir fotos"
+                Clicked="onClickImages"/>
+        <Button Text="Guardar"/>
+
+    </VerticalStackLayout>
+</ContentPage>

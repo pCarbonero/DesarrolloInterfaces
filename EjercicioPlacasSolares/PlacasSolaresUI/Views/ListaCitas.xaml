@@ -9,21 +9,69 @@
     </ContentPage.BindingContext>
     
     <StackLayout>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <Grid VerticalOptions="FillAndExpand" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
+
+            <VerticalStackLayout Grid.Column="0" 
+                                 Spacing="20"
+                                 BackgroundColor="IndianRed">
+                <Label Text="Bienvenido Usuario" 
+                       HorizontalTextAlignment="Center"
+                       FontSize="30"/>
+                <Image Source="profile.jpg"
+                       MaximumHeightRequest="200"/>
+                <Border Stroke="Black" Padding="10" 
+                        BackgroundColor="Beige">
+                    <Label Text="Historial de citas"
+                           HorizontalTextAlignment="Center"
+                           FontSize="15"
+                           FontAttributes="Bold"/>
+                </Border>
+                <Border Stroke="Black" Padding="10" 
+                           BackgroundColor="Beige">
+                    <Label Text="Historial de citas"
+                           HorizontalTextAlignment="Center"
+                           FontSize="15"
+                           FontAttributes="Bold"/>
+                </Border>
+                <Border Stroke="Black" Padding="10" 
+                           BackgroundColor="Beige">
+                    <Label Text="Historial de citas"
+                           HorizontalTextAlignment="Center"
+                           FontSize="15"
+                           FontAttributes="Bold"/>  
+                </Border>
+                <Button Text="Cerrar Sesion"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="1" 
+                                 BackgroundColor="PaleVioletRed">
+                <Label Text="Citas de hoy" 
+                       HorizontalTextAlignment="Center"
+                       FontSize="50"/>
+                <ScrollView>
+                    <ListView ItemsSource="{Binding ListaCitas}"
+                              ItemSelected="onItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell>
+                                    <TextCell.Text>
+                                        <MultiBinding StringFormat="{}{0:dd/MM} {1:HH:mm} {2}">
+                                            <Binding Path="Fecha"></Binding>
+                                            <Binding Path="Hora"></Binding>
+                                            <Binding Path="NombreCliente"></Binding>
+                                        </MultiBinding>
+                                    </TextCell.Text>
+                                </TextCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+            </VerticalStackLayout>
+            
         </Grid>
-        <ListView ItemsSource="{Binding ListaCitas}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Cliente.Nombre}">
-                    </TextCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
     </StackLayout>
 </ContentPage>
