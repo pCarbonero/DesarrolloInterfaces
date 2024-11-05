@@ -7,27 +7,85 @@
     <ContentPage.BindingContext>
         <vm:CitaDetalleVM/>
     </ContentPage.BindingContext>
-    <VerticalStackLayout>
-        <Label Text="{Binding Cita.NombreCliente}"
-                   FontSize="30"
-                   FontAttributes="Bold"/>
-        <HorizontalStackLayout>
-            <Label Text="{Binding Cita.Direccion}"
-                   FontSize="30"
-                   FontAttributes="Bold"/>
-            <Button Text="Ubicacion" 
-                    Clicked="onClickLocation"/>
-        </HorizontalStackLayout>
-        <Label Text="Observaciones: "/>
-        <Border Stroke="Black">
-            <Editor Text="{Binding Cita.Observaciones}" 
-        MinimumHeightRequest="200"/>
-        </Border>
-        <Label Text="APTA / NO APTA: "/>
-        <CheckBox IsChecked="{Binding Cita.EsApta}"/>
-        <Button Text="Añadir fotos"
-                Clicked="onClickImages"/>
-        <Button Text="Guardar"/>
 
+
+    <VerticalStackLayout BackgroundColor="#ffd394"
+                         Spacing="50" VerticalOptions="FillAndExpand"
+                         Padding="50,20,50,50">
+        <HorizontalStackLayout>
+
+            <Label FontSize="30"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"
+                   Padding="0,0,30,0">
+                <Label.Text>
+                    <MultiBinding StringFormat="{}{0}, {1}">
+                        <Binding Path="Cita.NombreCliente"/>
+                        <Binding Path="Cita.Direccion"/>
+                    </MultiBinding>
+                </Label.Text>
+            </Label>
+
+            <Border Stroke="Black"                
+                    StrokeThickness="2"
+                    StrokeShape="RoundRectangle 10,10"
+                    BackgroundColor="IndianRed">
+                <ImageButton Source="loc.png" 
+                 MaximumHeightRequest="40"
+                 HorizontalOptions="End"
+                 Clicked="onClickLocation"/>
+            </Border>
+            
+        </HorizontalStackLayout>
+
+        <Label Text="Observaciones:"
+           FontAttributes="Bold"
+           FontSize="40"
+           VerticalOptions="Start"/>
+        <Border Stroke="Black"                
+            StrokeThickness="2">
+            <Editor Text="{Binding Cita.Observaciones}" 
+                BackgroundColor="White"
+                FontSize="18"
+                MinimumHeightRequest="150"/>
+        </Border>
+
+        <HorizontalStackLayout>
+            <Label Text="Añadir fotos:"  
+               FontSize="20"
+               VerticalOptions="Center"
+               Padding="0,0,20,0"/>
+            <Button Text="Seleccionar Fotos"
+                HorizontalOptions="Center"
+                BackgroundColor="#873a3A"
+                BorderColor="Black"
+                BorderWidth="2"
+                Clicked="onClickImages"
+                MaximumHeightRequest="50"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Label Text="Apta / No apta  "                 
+               FontSize="40"
+               FontAttributes="Bold"
+               VerticalOptions="Center"/>
+            <Grid Scale="2">
+                <CheckBox IsChecked="{Binding Cita.EsApta}"
+                          Color="#873a3A"
+                          HorizontalOptions="Center"
+                          VerticalOptions="Center"/>
+            </Grid>
+            
+        </HorizontalStackLayout>
+
+        <Button Text="Guardar"
+                BackgroundColor="#873a3A"
+                BorderColor="Black"
+                BorderWidth="2"
+                HorizontalOptions="Start"
+                VerticalOptions="End"
+                MinimumWidthRequest="200"
+                Clicked="onClickSave"/>
     </VerticalStackLayout>
+    
 </ContentPage>

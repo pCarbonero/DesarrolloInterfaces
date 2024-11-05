@@ -25,4 +25,9 @@ public partial class CitaDetalle : ContentPage
     {
         MediaPicker.PickPhotoAsync();
     }
+
+    public void onClickSave(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new ListaCitas());
+    }
 }

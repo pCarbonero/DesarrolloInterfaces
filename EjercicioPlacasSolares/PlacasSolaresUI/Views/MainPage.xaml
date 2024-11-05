@@ -7,49 +7,63 @@
         <vmodel:ClsLoginVM/>
     </ContentPage.BindingContext>
 
-    <StackLayout BackgroundColor="Beige" VerticalOptions="FillAndExpand">
-        <Grid VerticalOptions="FillAndExpand" >
+    <StackLayout BackgroundColor="#ffd394" VerticalOptions="FillAndExpand">
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1.5*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Column="0" Grid.Row="0"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   FontSize="100"
-                   Text="TEXTO EMPRESA"/>
+            <Image Source="logosolbien.png"
+                   Grid.Column="0" Grid.Row="0"
+                   MinimumHeightRequest="200"
+                   Margin="100,0,0,0"/>
+            
             <Border Grid.Column="1" Grid.Row="0"
                     Margin="100"
                     StrokeThickness="4"
                     Stroke="Black"
-                    StrokeShape="RoundRectangle 20,20,20,20">
+                    StrokeShape="RoundRectangle 20,20,20,20"
+                    BackgroundColor="IndianRed">
 
                 <VerticalStackLayout Spacing="30" 
                                      HorizontalOptions="Center"
                                      VerticalOptions="Center">
-                    <Label Text="LOGIN"
+                    <Label Text="Iniciar sesión"
                            HorizontalOptions="Center"
                            FontSize="50"
                            FontAttributes="Bold"/>
-                    <Entry Placeholder="Username"
-                           BackgroundColor="White"
-                           MaximumWidthRequest="180"
-                           Text="{Binding Username, Mode=TwoWay}"/>
-                    <Entry Placeholder="Password"
-                            BackgroundColor="White"
-                            MaximumWidthRequest="180"
-                            Text="{Binding Password, Mode=TwoWay}"/>
+                    
+                    <Border Stroke="Black">
+                        <Entry Placeholder="Username"
+                               PlaceholderColor="#873a3A"
+                               BackgroundColor="#ffd394"
+                               MinimumWidthRequest="200"
+                               Text="{Binding Username, Mode=TwoWay}"/>
+                    </Border>
+
+                    <Border Stroke="Black">
+                        <Entry Placeholder="Password"
+                               PlaceholderColor="#873a3A"
+                               BackgroundColor="#ffd394"
+                               MinimumWidthRequest="200"
+                               IsPassword="True"
+                               Text="{Binding Password, Mode=TwoWay}"/>
+                    </Border>
+                    
                     <Button Text="Entrar"
-                            BackgroundColor="OrangeRed"
-                            MaximumWidthRequest="100"
-                            Clicked="onClick"/>
+                            BackgroundColor="#873a3A"
+                            MinimumWidthRequest="150"
+                            Clicked="onClick"
+                            BorderWidth="2"
+                            BorderColor="Black"/>
                     <Label x:Name="textError"
                         Text="Rellena los campos correctamente"
-                           IsVisible="False"/>
+                           IsVisible="False"
+                           TextColor="Purple"/>
                 </VerticalStackLayout>
             </Border>
         </Grid>

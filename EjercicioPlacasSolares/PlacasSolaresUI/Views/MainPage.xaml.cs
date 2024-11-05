@@ -18,6 +18,7 @@ namespace PlacasSolaresUI
                 if (vm.correctLogIn())
                 {
                     Navigation.PushAsync(new ListaCitas());
+                    textError.IsVisible = false;
                 }
                 else
                 {

@@ -47,15 +47,6 @@ namespace PlacasSolaresUI.ViewModels
             return isCorrect;
         }
 
-
-        public void nextView()
-        {
-            if (correctLogIn())
-            {
-                //TODO Pasar siguiente pagina
-            }
-        }
-
         #endregion       
 
         #region Notify

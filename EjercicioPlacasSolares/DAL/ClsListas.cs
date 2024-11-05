@@ -18,7 +18,49 @@ namespace DAL
             lista.Add(new ClsCita(DateTime.Today, new TimeOnly(11, 30),
                 false, "", "Sara Ruiz", "C/ B"));
             lista.Add(new ClsCita(DateTime.Today, new TimeOnly(13, 30),
-                false, "", "Zlatan Ibrahimovic", "C/ D"));
+                false, "", "Elena Lorenzo", "C/ D"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(9, 30),
+                false, "", "Pablo Carbonero", "C/ A"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(11, 30),
+                false, "", "Sara Ruiz", "C/ B"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(13, 30),
+                false, "", "Elena Lorenzo", "C/ D"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(9, 30),
+                false, "", "Pablo Carbonero", "C/ A"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(11, 30),
+                false, "", "Sara Ruiz", "C/ B"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(13, 30),
+                false, "", "Elena Lorenzo", "C/ D"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(9, 30),
+                false, "", "Pablo Carbonero", "C/ A"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(11, 30),
+                false, "", "Sara Ruiz", "C/ B"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(13, 30),
+                false, "", "Elena Lorenzo", "C/ D"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(9, 30),
+                false, "", "Pablo Carbonero", "C/ A"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(11, 30),
+                false, "", "Sara Ruiz", "C/ B"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(13, 30),
+                false, "", "Elena Lorenzo", "C/ D"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(9, 30),
+                false, "", "Pablo Carbonero", "C/ A"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(11, 30),
+                false, "", "Sara Ruiz", "C/ B"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(13, 30),
+                false, "", "Elena Lorenzo", "C/ D"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(9, 30),
+                false, "", "Pablo Carbonero", "C/ A"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(11, 30),
+                false, "", "Sara Ruiz", "C/ B"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(13, 30),
+                false, "", "Elena Lorenzo", "C/ D"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(9, 30),
+                false, "", "Pablo Carbonero", "C/ A"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(11, 30),
+                false, "", "Sara Ruiz", "C/ B"));
+            lista.Add(new ClsCita(DateTime.Today, new TimeOnly(13, 30),
+                false, "", "Elena Lorenzo", "C/ D"));
 
             return lista;
         }

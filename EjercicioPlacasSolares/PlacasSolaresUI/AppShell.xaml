@@ -8,7 +8,7 @@
     Title="PlacasSolaresUI">
 
     <ShellContent
-        Title="Home"
+        Title="LogIn"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 

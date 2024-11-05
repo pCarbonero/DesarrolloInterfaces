@@ -15,63 +15,75 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
-            <VerticalStackLayout Grid.Column="0" 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+
+            <VerticalStackLayout Grid.RowSpan="2" Grid.Column="0" 
                                  Spacing="20"
-                                 BackgroundColor="IndianRed">
-                <Label Text="Bienvenido Usuario" 
+                                 BackgroundColor="IndianRed"
+                                 Padding="0,20"
+                                 VerticalOptions="FillAndExpand">
+                
+                <Label Text="Técnico Logeado"
+                       FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
                        FontSize="30"/>
                 <Image Source="profile.jpg"
                        MaximumHeightRequest="200"/>
-                <Border Stroke="Black" Padding="10" 
-                        BackgroundColor="Beige">
-                    <Label Text="Historial de citas"
-                           HorizontalTextAlignment="Center"
-                           FontSize="15"
-                           FontAttributes="Bold"/>
-                </Border>
-                <Border Stroke="Black" Padding="10" 
-                           BackgroundColor="Beige">
-                    <Label Text="Historial de citas"
-                           HorizontalTextAlignment="Center"
-                           FontSize="15"
-                           FontAttributes="Bold"/>
-                </Border>
-                <Border Stroke="Black" Padding="10" 
-                           BackgroundColor="Beige">
-                    <Label Text="Historial de citas"
-                           HorizontalTextAlignment="Center"
-                           FontSize="15"
-                           FontAttributes="Bold"/>  
-                </Border>
-                <Button Text="Cerrar Sesion"/>
+                <Button Text="Configuración"
+                        MaximumWidthRequest="300"
+                        BackgroundColor="#ffd394"
+                        TextColor="Black"   
+                        BorderColor="Black"
+                        BorderWidth="2"/>
+                <Button Text="Hostorial de citas"
+                        MaximumWidthRequest="300"
+                        BackgroundColor="#ffd394"
+                        TextColor="Black"
+                        BorderColor="Black"
+                        BorderWidth="2"/>
+                <Button Text="Reportar un problema"
+                        MaximumWidthRequest="300"
+                        BackgroundColor="#ffd394"
+                        TextColor="Black"
+                        BorderColor="Black"
+                        BorderWidth="2"/>
+                
+                
+                <Button Text="Cerrar Sesion"
+                        MaximumWidthRequest="200"
+                        BackgroundColor="#873a3A"
+                        BorderColor="Black"
+                        BorderWidth="2"
+                        Clicked="onClickLogOut"/>
             </VerticalStackLayout>
 
-            <VerticalStackLayout Grid.Column="1" 
-                                 BackgroundColor="PaleVioletRed">
-                <Label Text="Citas de hoy" 
+
+                <Label Grid.Row="0" Grid.Column="1" 
+                       Text="Citas de hoy" 
                        HorizontalTextAlignment="Center"
-                       FontSize="50"/>
-                <ScrollView>
-                    <ListView ItemsSource="{Binding ListaCitas}"
-                              ItemSelected="onItemSelected">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <TextCell>
-                                    <TextCell.Text>
-                                        <MultiBinding StringFormat="{}{0:dd/MM} {1:HH:mm} {2}">
-                                            <Binding Path="Fecha"></Binding>
-                                            <Binding Path="Hora"></Binding>
-                                            <Binding Path="NombreCliente"></Binding>
-                                        </MultiBinding>
-                                    </TextCell.Text>
-                                </TextCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </ScrollView>
-            </VerticalStackLayout>
-            
+                       FontSize="50"
+                       BackgroundColor="#ffd394"/>
+                <ListView ItemsSource="{Binding ListaCitas}"
+                              ItemSelected="onItemSelected" Grid.Row="1" Grid.Column="1"
+                          BackgroundColor="#ffd394">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell TextColor="Black"
+                                      Detail="{Binding NombreCliente}">
+                                <TextCell.Text>
+                                    <MultiBinding StringFormat="{}{0:dd/MM} {1:HH:mm}">
+                                        <Binding Path="Fecha"></Binding>
+                                        <Binding Path="Hora"></Binding>
+                                </MultiBinding>
+                                </TextCell.Text>
+                            </TextCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
         </Grid>
     </StackLayout>
 </ContentPage>
