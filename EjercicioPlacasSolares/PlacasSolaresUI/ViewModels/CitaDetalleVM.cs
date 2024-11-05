@@ -13,7 +13,7 @@ namespace PlacasSolaresUI.ViewModels
         public CitaDetalleVM() 
         {
             Cita = new ClsCita(DateTime.Today,
-            new TimeOnly(9, 30), false, "", "Pablo Carbonero", "C/ Hiro-no-miya Naruhito nº126");
+            new TimeOnly(9, 30), false, "", "Pablo Carbonero", "C/ Hiro-no-miya Naruhito nº126 ");
         }
     }
 }
