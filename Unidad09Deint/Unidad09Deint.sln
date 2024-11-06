@@ -5,11 +5,17 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EjercicioEdad", "EjercicioEdad\EjercicioEdad.csproj", "{F29047BF-A461-4E49-B137-A5AE915A1E34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio02", "Ejercicio02\Ejercicio02.csproj", "{1950F8DB-3B6D-48B3-9B4C-F93288CB02C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio02", "Ejercicio02\Ejercicio02.csproj", "{1950F8DB-3B6D-48B3-9B4C-F93288CB02C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio03UI", "Ejercicio03UI\Ejercicio03UI.csproj", "{DF1F62D2-B3E2-42EE-9D34-30C8C0D3E93A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejercicio03UI", "Ejercicio03UI\Ejercicio03UI.csproj", "{DF1F62D2-B3E2-42EE-9D34-30C8C0D3E93A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{12358B54-9CFD-4E99-BC62-434A0B2F7856}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Entidades.csproj", "{12358B54-9CFD-4E99-BC62-434A0B2F7856}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EjerciciosTXt", "EjerciciosTXt", "{09ADE43F-974B-4311-B5B8-73B26FE07222}"
+	ProjectSection(SolutionItems) = preProject
+		ejercicio01.txt = ejercicio01.txt
+		ejercicio02.txt = ejercicio02.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

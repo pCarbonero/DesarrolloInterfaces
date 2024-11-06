@@ -1,0 +1,31 @@
+[ENTIDADES]
+ClsDepartamento
+	+ int Id (get)
+	+ string Nombre (get, set)
+
+ClsPersona
+	+ int Id (get)
+	+ string Nombre (get, set)
+	+ string Apellidos (get, set)
+	+ int IdDepartamento (get, set)
+
+[DAL] 
+ClsListadosDAL
+	+ static List<ClsDepartamento> listadoDepartamentosDAL -> devuelve una lista de departamentos
+	+ static ClsDepartamento departamentoPorIdDAL(int Id) -> busca el departamento pasado por parametro y lo devuelve
+	+ static List<ClsPersona> listadoPersonasDAL -> devuelve una lista de personas 
+	+ static int contadorPersonasDepartamentoDAL(int IdDepartamento) -> devuelve el numero de personas en el departamento con dicho Id
+
+[BL]
+ClsListadosBL
+	+ static List<ClsDepartamento> listadoDepartamentosBL -> devuelve una lista de departamentos que obtiene de DAL
+	+ static ClsDepartamento departamentoPorIdBL(int Id) -> busca el departamento pasado por parametro y lo devuelve
+	+ static List<ClsPersona> listadoPersonasDAL -> devuelve una lista de personas que obtiene de DAL
+	+ static int contadorPersonasDepartamentoBL(int IdDepartamento) -> devuelve el numero de personas en el departamento con dicho Id que obtiene de DAL
+
+[UI MAUI]
+ClsPersonasDepartamentoVM
+	+ List<ClsDepartamento> listaDepartamentos
+	+ List<ClsPersona> listaPersonas
+	+ ClsDepartamento departamentoSeleccionado
+	+ int numeroPersonasDepartamento

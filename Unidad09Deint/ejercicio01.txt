@@ -1,0 +1,27 @@
+[ENTIDADES]
+ClsPersona
+	+ int Id (get)
+	+ string Nombre (get, set)
+	+ string Apellidos (get, set)
+	+ DateTime FechaNac (get, set)
+	+ bool esMayorEdad (get, set = comprobarEdad)
+
+	- bool comprobarEdad -> devuelve si la persona es mayor de edad o no
+
+[DAL]
+ClsListadosDAL
+	+ static List<ClsPersona> listadoPersonasDAL -> devuelve una lista de objetos ClsPersona
+
+[BL]
+ClsListadosBL
+	+ static List<ClsPersona> listadoPersonasBL -> devuelve una lista de objetos ClsPersona que obtiene de la capa DAL
+
+[UI MAUI]
+VIEWMODEL
+	ClsListadoPersonasVM
+		+ List<ClsPersona> listadoPersonas
+
+[UI ASP.NET]
+VISTA -> Obtiene una lista de personas directamente desde la capa BL
+
+
