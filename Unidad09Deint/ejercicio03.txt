@@ -1,0 +1,23 @@
+[ENTIDADES]
+clsMarca:
+	+ int Id (get, set)
+	+ string Nombre (get, set)
+
+clsModelo
+	+ int Id (get, set)
+	+ string Nombre (get, set)
+	+ int IdMarca (get, set)
+
+[DAL]
+	+ static List<clsMarca> listadoMarcasDAL -> devuelve una lista de marcas de coche
+	+ static List<clsModelo> listadoModelosMarcaDAL(idMarca) -> devuelve una lista de modelos de una marca
+
+[BL]
+	+ static List<clsMarca> listadoMarcasBL -> devuelve una lista de marcas de coche que obtiene de DAL
+	+ static List<clsModelo> listadoModelosMarcaBL(idMarca) -> devuelve una lista de modelos de una marca que obtiene de DAL
+
+[UI MAUI-ASAP.NET]	
+	//VIEW MODEL
+	clsListaModelosMarcasVM
+		+ List<clsMarca> listaMarcas
+		+ List<clsModelo> listaModelos

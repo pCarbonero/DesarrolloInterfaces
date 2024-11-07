@@ -1,0 +1,21 @@
+[ENTIDADES]
+	clsDia
+		+ int Id (get, set)
+		+ DateTime dia
+		+ int temperatura (get, set)
+		+ int humedad (get, set)
+		// cosas como, prop de lluvia, si nublado o soleado, etc
+
+[DAL]
+	+ static List<clsDia> listadoDiasDAL -> devuelve un listado de dias
+	+ static clsDia diaPorIdDAL -> devuelve un dia concreto por Id
+
+[BL]
+	+ static List<clsDia> listadoDiasBL -> devuelve un listado de 7 días desde empezando por el dia actual seguido de los 6 días que le siguen
+	+ static clsDia diaPorIdBL -> devuelve un dia concreto por Id que obtiene de DAL
+
+[UI]
+	View Model
+		clsVerDetallesDiasVM
+			+ List<clsDia> listadoDias
+			+ clsDia diaSeleccionado

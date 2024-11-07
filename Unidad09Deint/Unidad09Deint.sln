@@ -15,6 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EjerciciosTXt", "Ejercicios
 	ProjectSection(SolutionItems) = preProject
 		ejercicio01.txt = ejercicio01.txt
 		ejercicio02.txt = ejercicio02.txt
+		ejercicio03.txt = ejercicio03.txt
+		ejercicio04.txt = ejercicio04.txt
+		ejercicio05.txt = ejercicio05.txt
 	EndProjectSection
 EndProject
 Global
