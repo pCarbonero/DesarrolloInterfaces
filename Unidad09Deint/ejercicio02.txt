@@ -12,15 +12,13 @@ ClsPersona
 [DAL] 
 ClsListadosDAL
 	+ static List<ClsDepartamento> listadoDepartamentosDAL -> devuelve una lista de departamentos
-	+ static ClsDepartamento departamentoPorIdDAL(int Id) -> busca el departamento pasado por parametro y lo devuelve
-	+ static List<ClsPersona> listadoPersonasDAL -> devuelve una lista de personas 
+	+ static List<ClsPersona> listadoPersonasDepartamentoDAL(IdDept) -> devuelve una lista de personas de un departamento
 	+ static int contadorPersonasDepartamentoDAL(int IdDepartamento) -> devuelve el numero de personas en el departamento con dicho Id
 
 [BL]
 ClsListadosBL
 	+ static List<ClsDepartamento> listadoDepartamentosBL -> devuelve una lista de departamentos que obtiene de DAL
-	+ static ClsDepartamento departamentoPorIdBL(int Id) -> busca el departamento pasado por parametro y lo devuelve
-	+ static List<ClsPersona> listadoPersonasDAL -> devuelve una lista de personas que obtiene de DAL
+	+ static List<ClsPersona> listadoPersonasDepartamentoBL(IdDept) -> devuelve una lista de personas que obtiene de DAL
 	+ static int contadorPersonasDepartamentoBL(int IdDepartamento) -> devuelve el numero de personas en el departamento con dicho Id que obtiene de DAL
 
 [UI MAUI]
@@ -29,3 +27,29 @@ ClsPersonasDepartamentoVM
 	+ List<ClsPersona> listaPersonas
 	+ ClsDepartamento departamentoSeleccionado
 	+ int numeroPersonasDepartamento
+
+[UI ASP.NET]
+ClsPersonasDepartamentoVM
+	+ List<ClsDepartamento> listaDepartamentos
+	+ List<ClsPersona> listaPersonas
+	+ int numeroPersonasDepartamento
+
+	+ ClsPersonasDepartamentoVM()
+		{
+			listadoDepartamentos = listadoDepartamentosBL
+		}
+
+	+ ClsPersonasDepartamentoVM(IdDept): base()
+		{
+			listaPersonas = listadoPersonasDepartamentoBL(IdDept)
+			numeroPersonasDepartamento = contadorPersonasDepartamentoBL(int IdDepartamento)
+		}
+
+
+Controllers
+	ListaEmpleado
+		return view(new ClsPersonasDepartamentoVM)
+
+	[HTTPPOST]
+	ListaEmpleado(idDept)
+		return view(new ClsPersonasDepartamentoVM)
