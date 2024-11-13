@@ -28,8 +28,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades05", "Entidades05\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL05", "DAL05\DAL05.csproj", "{B4956739-17D6-4012-8A4F-C1A2CC9B7BB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjercicioUd10", "EjercicioUd06\EjercicioUd10.csproj", "{878A1F5E-477E-48FA-85FE-455ED03DE9C9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,12 +76,6 @@ Global
 		{B4956739-17D6-4012-8A4F-C1A2CC9B7BB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4956739-17D6-4012-8A4F-C1A2CC9B7BB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4956739-17D6-4012-8A4F-C1A2CC9B7BB5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{878A1F5E-477E-48FA-85FE-455ED03DE9C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{878A1F5E-477E-48FA-85FE-455ED03DE9C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{878A1F5E-477E-48FA-85FE-455ED03DE9C9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{878A1F5E-477E-48FA-85FE-455ED03DE9C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{878A1F5E-477E-48FA-85FE-455ED03DE9C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{878A1F5E-477E-48FA-85FE-455ED03DE9C9}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
