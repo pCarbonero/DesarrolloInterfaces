@@ -4,6 +4,10 @@ namespace DAL05
 {
     public class clsListados
     {
+        /// <summary>
+        /// Funcion que devuelve una lista de persoans
+        /// </summary>
+        /// <returns>Lista de personas</returns>
         public static List<clsPersona> listadoPersonas()
         {
             List<clsPersona> lista = new List<clsPersona>();

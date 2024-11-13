@@ -13,24 +13,30 @@ namespace Ejercicio05UI.ViewModels
 {
     internal class ListaPersonasPersonaVM: INotifyPropertyChanged
     {
-
+        #region atributos
         private clsPersona personaSeleccionada;
-
-
-
-
+        #endregion
+        #region propiedades
         public clsPersona PersonaSeleccionada
         {
             get { return personaSeleccionada; }
             set { personaSeleccionada = value; notifyPropertyChanged(); }
         }
-        public ObservableCollection<clsPersona> ListaPersonas { get; set; }
-
+        public ObservableCollection<clsPersona> ListaPersonas { get; }
+        #endregion
+        #region constructores
         public ListaPersonasPersonaVM()
         {
-            ListaPersonas = new ObservableCollection<clsPersona>(clsListados.listadoPersonas());
+            try
+            {
+                ListaPersonas = new ObservableCollection<clsPersona>(clsListados.listadoPersonas());
+            }
+            catch (Exception ex)
+            {
+                // TODO: mostrar mensaje de ERROU $%&LAVICBIDNIINMLAVICBIDNIINM$%&
+            }     
         }
-
+        #endregion
         #region Notify
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -39,6 +45,5 @@ namespace Ejercicio05UI.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
-
     }
 }
