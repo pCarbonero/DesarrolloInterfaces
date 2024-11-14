@@ -60,11 +60,18 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="Prism.Core" Version="9.0.537" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Folder Include="ViewModels\Utilities\" />
 	  <Folder Include="Views\" />
+	  <Folder Include="Views\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\DAL\DAL.csproj" />
+	  <ProjectReference Include="..\Entidades\Entidades.csproj" />
 	</ItemGroup>
 
 </Project>
