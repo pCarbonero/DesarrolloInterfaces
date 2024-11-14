@@ -1,6 +1,6 @@
-﻿using DAL;
+﻿using _18_CRUD_Personas_UWP_UI.ViewModels.Utilidades;
+using DAL;
 using Entidades;
-using Prism.Commands;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,6 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using DelegateCommand = _18_CRUD_Personas_UWP_UI.ViewModels.Utilidades.DelegateCommand;
 
 namespace Ejercicio01.ViewModels
 {
