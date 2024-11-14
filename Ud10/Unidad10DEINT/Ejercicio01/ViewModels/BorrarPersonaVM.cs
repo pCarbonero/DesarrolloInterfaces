@@ -14,14 +14,22 @@ using DelegateCommand = _18_CRUD_Personas_UWP_UI.ViewModels.Utilidades.DelegateC
 
 namespace Ejercicio01.ViewModels
 {
-    internal class BorrarPersonaVM: INotifyPropertyChanged
+    internal class BorrarPersonaVM : INotifyPropertyChanged
     {
         #region atributos
+        private String nombrePersona = "";
         private clsPersona personaSeleccionada;
         private DelegateCommand eliminar;
+        private DelegateCommand buscar;
+        private ObservableCollection<clsPersona> listaPersonas;
+
         #endregion
 
         #region propiedades
+        public ObservableCollection<clsPersona> ListaCompleta { get;}
+        public ObservableCollection<clsPersona> ListaFiltrada { get; set; }
+
+
         public clsPersona PersonaSeleccionada
         {
             get { return personaSeleccionada; }
@@ -33,11 +41,33 @@ namespace Ejercicio01.ViewModels
                 eliminar.RaiseCanExecuteChanged();
             }
         }
+
+        public string NombrePersona
+        {
+            get { return nombrePersona; }
+            set 
+            { 
+                nombrePersona = value; 
+                notifyPropertyChanged("NombrePersona");
+                buscar.RaiseCanExecuteChanged();
+            }
+        }
+
         public DelegateCommand Eliminar
         {
             get { return eliminar; }
         }
-        public ObservableCollection<clsPersona> ListaPersonas { get; }
+
+        public DelegateCommand Buscar
+        { 
+            get { return buscar; }
+        }
+
+        public ObservableCollection<clsPersona> ListaPersonas 
+        { 
+            get { return listaPersonas; } 
+            set { listaPersonas = value; notifyPropertyChanged("ListaPersonas"); }
+        }
         #endregion
 
         #region constructores
@@ -45,8 +75,10 @@ namespace Ejercicio01.ViewModels
         {
             try
             {
-                ListaPersonas = new ObservableCollection<clsPersona>(clsListados.listadoPersonas());
-                eliminar = new DelegateCommand(Execute, CanExecute);
+                ListaCompleta = new ObservableCollection<clsPersona>(clsListados.listadoPersonas());
+                ListaPersonas = ListaCompleta;
+                eliminar = new DelegateCommand(ExecuteEliminar, CanExecuteEliminar);
+                buscar = new DelegateCommand(ExecuteBuscar, CanExecuteBuscar);
             }
             catch (Exception ex)
             {
@@ -65,7 +97,7 @@ namespace Ejercicio01.ViewModels
 
         #region Eventos
         public event EventHandler? CanExecuteChanged;
-        private bool CanExecute()
+        private bool CanExecuteEliminar()
         {
             bool sePuede = true;
             if (personaSeleccionada == null)
@@ -75,9 +107,26 @@ namespace Ejercicio01.ViewModels
             return sePuede;
         }
 
-        public void Execute()
+        public void ExecuteEliminar()
         {
            ListaPersonas.Remove(PersonaSeleccionada);
+        }
+
+        private bool CanExecuteBuscar()
+        {
+            bool sePuede = true;
+            if (String.IsNullOrEmpty(nombrePersona))
+            {
+                sePuede = false;
+                ListaPersonas = ListaCompleta;
+            }
+            return sePuede;
+        }
+
+        public void ExecuteBuscar()
+        {
+            ListaFiltrada = new ObservableCollection<clsPersona>(clsListados.listadoFiltrado(NombrePersona));
+            ListaPersonas = ListaFiltrada;
         }
         #endregion
     }

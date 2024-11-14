@@ -35,5 +35,19 @@ namespace DAL
 
             return lista;
         }
+
+        public static List<clsPersona> listadoFiltrado(String busqueda)
+        {
+            List<clsPersona> lista = clsListados.listadoPersonas();
+            List<clsPersona> listaFiltrada = new List<clsPersona>();
+
+            foreach (clsPersona persona in lista){
+                if (persona.Nombre.Contains(busqueda))
+                {
+                    listaFiltrada.Add(persona);
+                }
+            }
+            return listaFiltrada;
+        }
     }
 }

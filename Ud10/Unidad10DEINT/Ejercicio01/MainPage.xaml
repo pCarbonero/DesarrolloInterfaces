@@ -9,10 +9,18 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ScrollView Grid.Row="0">
+        
+        <HorizontalStackLayout Grid.Row="0">
+            <Entry Text="{Binding NombrePersona, Mode=TwoWay}"/>
+            <Button Text="Buscar"
+                    Command="{Binding Buscar}"/>
+        </HorizontalStackLayout>
+        
+        <ScrollView Grid.Row="1">
             <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
@@ -34,7 +42,7 @@
                 </ListView>
             </VerticalStackLayout>
         </ScrollView>
-        <VerticalStackLayout Grid.Row="1"
+        <VerticalStackLayout Grid.Row="2"
             MinimumHeightRequest="50" MinimumWidthRequest="50"> 
             <Button Text="Borrar"
                     Command="{Binding Eliminar}"/>
