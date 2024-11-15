@@ -42,7 +42,7 @@ namespace DAL
             List<clsPersona> listaFiltrada = new List<clsPersona>();
 
             foreach (clsPersona persona in lista){
-                if (persona.Nombre.Contains(busqueda))
+                if (persona.Nombre.Contains(busqueda) || persona.Apellidos.Contains(busqueda))
                 {
                     listaFiltrada.Add(persona);
                 }

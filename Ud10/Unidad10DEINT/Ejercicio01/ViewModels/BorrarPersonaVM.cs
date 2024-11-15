@@ -22,13 +22,10 @@ namespace Ejercicio01.ViewModels
         private DelegateCommand eliminar;
         private DelegateCommand buscar;
         private ObservableCollection<clsPersona> listaPersonas;
-
+        private ObservableCollection<clsPersona> listaCompleta;
         #endregion
 
         #region propiedades
-        public ObservableCollection<clsPersona> ListaCompleta { get;}
-        public ObservableCollection<clsPersona> ListaFiltrada { get; set; }
-
 
         public clsPersona PersonaSeleccionada
         {
@@ -66,7 +63,6 @@ namespace Ejercicio01.ViewModels
         public ObservableCollection<clsPersona> ListaPersonas 
         { 
             get { return listaPersonas; } 
-            set { listaPersonas = value; notifyPropertyChanged("ListaPersonas"); }
         }
         #endregion
 
@@ -75,8 +71,8 @@ namespace Ejercicio01.ViewModels
         {
             try
             {
-                ListaCompleta = new ObservableCollection<clsPersona>(clsListados.listadoPersonas());
-                ListaPersonas = ListaCompleta;
+                listaCompleta = new ObservableCollection<clsPersona>(clsListados.listadoPersonas());
+                listaPersonas = listaCompleta;
                 eliminar = new DelegateCommand(ExecuteEliminar, CanExecuteEliminar);
                 buscar = new DelegateCommand(ExecuteBuscar, CanExecuteBuscar);
             }
@@ -107,9 +103,10 @@ namespace Ejercicio01.ViewModels
             return sePuede;
         }
 
-        public void ExecuteEliminar()
+        public async void ExecuteEliminar()
         {
-           ListaPersonas.Remove(PersonaSeleccionada);
+            bool acepta = await Application.Current.MainPage.DisplayAlert("Borrar persona", "¿Estas seguro de que quieres borrar esta persona?", "Sí", "No");
+            ListaPersonas.Remove(PersonaSeleccionada);
         }
 
         private bool CanExecuteBuscar()
@@ -118,15 +115,16 @@ namespace Ejercicio01.ViewModels
             if (String.IsNullOrEmpty(nombrePersona))
             {
                 sePuede = false;
-                ListaPersonas = ListaCompleta;
+                listaPersonas = listaCompleta;
+                notifyPropertyChanged("ListaPersonas");
             }
             return sePuede;
         }
 
         public void ExecuteBuscar()
         {
-            ListaFiltrada = new ObservableCollection<clsPersona>(clsListados.listadoFiltrado(NombrePersona));
-            ListaPersonas = ListaFiltrada;
+            listaPersonas = new ObservableCollection<clsPersona>(clsListados.listadoFiltrado(NombrePersona));
+            notifyPropertyChanged("ListaPersonas");
         }
         #endregion
     }
