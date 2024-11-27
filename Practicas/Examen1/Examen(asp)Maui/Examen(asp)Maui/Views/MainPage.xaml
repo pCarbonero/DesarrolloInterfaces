@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Examen_asp_Maui.ViewModels"
+             x:Class="Examen_asp_Maui.MainPage">
+    <ContentPage.BindingContext>
+        <vm:clsSeleccionarMisionVM/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Picker Grid.Row="0"
+                    ItemsSource="{Binding ListadoMisiones}"
+                    ItemDisplayBinding="{Binding Nombre}"
+                    SelectedItem="{Binding CandidatoSeleccionado}"/>
+
+            <Button Grid.Row="1" Text="Ver gente" Command=""/>
+
+            <ScrollView Grid.Row="2" Padding="10">
+                <VerticalStackLayout Spacing="10">
+                    <ListView ItemsSource="{Binding ListaCandidatosEdad}"
+                  SelectedItem="{Binding CandidatoSeleccionado}"
+                  HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <HorizontalStackLayout Spacing="10">
+                                        <VerticalStackLayout>
+                                            <Label TextColor="Black" FontSize="Large" FontAttributes="Bold">
+                                                <Label.Text>
+                                                    <MultiBinding StringFormat="{}{0} {1}">
+                                                        <Binding Path="Nombre"/>
+                                                        <Binding Path="Apellidos"/>
+                                                    </MultiBinding>
+                                                </Label.Text>
+                                            </Label>
+                                            <Label Text="{Binding Edad}" FontSize="Small" TextColor="Black"/>
+                                        </VerticalStackLayout>
+                                    </HorizontalStackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
