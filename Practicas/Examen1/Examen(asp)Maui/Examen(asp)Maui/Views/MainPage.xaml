@@ -7,49 +7,43 @@
         <vm:clsSeleccionarMisionVM/>
     </ContentPage.BindingContext>
 
-    <ScrollView>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            
-            <Picker Grid.Row="0"
-                    ItemsSource="{Binding ListadoMisiones}"
+    <AbsoluteLayout>
+
+
+        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                             AbsoluteLayout.LayoutFlags="All">
+            <Picker ItemsSource="{Binding ListadoMisiones}"
                     ItemDisplayBinding="{Binding Nombre}"
-                    SelectedItem="{Binding CandidatoSeleccionado}"/>
-
-            <Button Grid.Row="1" Text="Ver gente" Command=""/>
-
-            <ScrollView Grid.Row="2" Padding="10">
+                    SelectedItem="{Binding MisionSeleccionada}"/>
+            <ScrollView Padding="10">
                 <VerticalStackLayout Spacing="10">
                     <ListView ItemsSource="{Binding ListaCandidatosEdad}"
-                  SelectedItem="{Binding CandidatoSeleccionado}"
-                  HasUnevenRows="True">
+                              SelectedItem="{Binding CandidatoSeleccionado}"
+                              HasUnevenRows="True">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
-                                    <HorizontalStackLayout Spacing="10">
-                                        <VerticalStackLayout>
+                                    <VerticalStackLayout>
+                                        <HorizontalStackLayout Spacing="10">
                                             <Label TextColor="Black" FontSize="Large" FontAttributes="Bold">
                                                 <Label.Text>
                                                     <MultiBinding StringFormat="{}{0} {1}">
                                                         <Binding Path="Nombre"/>
-                                                        <Binding Path="Apellidos"/>
+                                                        <Binding Path="Apellido"/>
                                                     </MultiBinding>
                                                 </Label.Text>
                                             </Label>
-                                            <Label Text="{Binding Edad}" FontSize="Small" TextColor="Black"/>
-                                        </VerticalStackLayout>
-                                    </HorizontalStackLayout>
+                                        </HorizontalStackLayout>
+                                        <Label Text="{Binding Nacionalidad}" FontSize="Small" TextColor="Black"/>
+                                        <Label Text="{Binding Edad}" FontSize="Small" TextColor="Black"/>
+                                    </VerticalStackLayout>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
                 </VerticalStackLayout>
             </ScrollView>
-        </Grid>
-    </ScrollView>
+        </VerticalStackLayout>
+    </AbsoluteLayout>
 
 </ContentPage>
