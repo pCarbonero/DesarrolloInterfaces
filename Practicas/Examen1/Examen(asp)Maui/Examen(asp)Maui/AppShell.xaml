@@ -5,11 +5,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Examen_asp_Maui"
     Shell.FlyoutBehavior="Disabled"
-    Title="Examen_asp_Maui">
+    Title="Examen_asp_Maui"
+    xmlns:views="clr-namespace:Examen_asp_Maui.Views">
 
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+    <ShellContent
+        Title="Detalles"
+        ContentTemplate="{DataTemplate views:DetallesView}"
+        Route="Detalles"/>
 
 </Shell>

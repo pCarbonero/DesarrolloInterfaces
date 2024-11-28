@@ -7,43 +7,58 @@
         <vm:clsSeleccionarMisionVM/>
     </ContentPage.BindingContext>
 
-    <AbsoluteLayout>
+    <Grid>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        
+        <Picker Grid.Row="0"
+                ItemsSource="{Binding ListadoMisiones}"
+                ItemDisplayBinding="{Binding Nombre}"
+                SelectedItem="{Binding MisionSeleccionada}"/>
 
-        <VerticalStackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
-                             AbsoluteLayout.LayoutFlags="All">
-            <Picker ItemsSource="{Binding ListadoMisiones}"
-                    ItemDisplayBinding="{Binding Nombre}"
-                    SelectedItem="{Binding MisionSeleccionada}"/>
-            <ScrollView Padding="10">
-                <VerticalStackLayout Spacing="10">
-                    <ListView ItemsSource="{Binding ListaCandidatosEdad}"
+        <Label Grid.Row="1"
+            IsVisible="{Binding NoAvailable}" Text="NO HAY CANDIDATOS DSIPONIBLES"/>
+
+        <ScrollView Grid.Row="2"
+                    Padding="10">
+            <VerticalStackLayout Spacing="10">
+                <ListView ItemsSource="{Binding ListaCandidatosEdad}"
                               SelectedItem="{Binding CandidatoSeleccionado}"
                               HasUnevenRows="True">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <VerticalStackLayout>
-                                        <HorizontalStackLayout Spacing="10">
-                                            <Label TextColor="Black" FontSize="Large" FontAttributes="Bold">
-                                                <Label.Text>
-                                                    <MultiBinding StringFormat="{}{0} {1}">
-                                                        <Binding Path="Nombre"/>
-                                                        <Binding Path="Apellido"/>
-                                                    </MultiBinding>
-                                                </Label.Text>
-                                            </Label>
-                                        </HorizontalStackLayout>
-                                        <Label Text="{Binding Nacionalidad}" FontSize="Small" TextColor="Black"/>
-                                        <Label Text="{Binding Edad}" FontSize="Small" TextColor="Black"/>
-                                    </VerticalStackLayout>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </VerticalStackLayout>
-            </ScrollView>
-        </VerticalStackLayout>
-    </AbsoluteLayout>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <VerticalStackLayout>
+                                    <HorizontalStackLayout Spacing="10">
+                                        <Label TextColor="Black" FontSize="Large" FontAttributes="Bold">
+                                            <Label.Text>
+                                                <MultiBinding StringFormat="{}{0} {1}">
+                                                    <Binding Path="Nombre"/>
+                                                    <Binding Path="Apellido"/>
+                                                </MultiBinding>
+                                            </Label.Text>
+                                        </Label>
+                                    </HorizontalStackLayout>
+                                    <Label Text="{Binding Nacionalidad}" FontSize="Small" TextColor="Black"/>
+                                    <Label Text="{Binding Edad}" FontSize="Small" TextColor="Black"/>
+                                </VerticalStackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Button MaximumWidthRequest="100"
+                Grid.Row="3"
+                Text="Detalles"
+                Command="{Binding DetallesCommand}"/>
+    </Grid>
 
 </ContentPage>

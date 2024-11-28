@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Layout1.MainPage">
+
+    <VerticalStackLayout Spacing="20">
+        <Border Stroke="Black" StrokeThickness="5"
+                StrokeShape="RoundRectangle 10,0,0,0"
+                Padding="10">
+            <Label Text="6限憾もよ紙薩勝合能メヨ英鮮クけん一止ナエソ好事ス物7辞トリセヨ視開ハ子歩ー載扱伸し。"/>
+        </Border>
+
+        <Border Stroke="Black" StrokeThickness="5"
+                Padding="10,0,0,50">
+            <Label Text="合キノフマ知宮ちくやげ覃9愛ン放大べめをせ著図時にしと政味ルゃとべ者中ヤセ工転タ提8巧ミ愛塩むめやね。棋ナメユ大頭ヌエア率続ユスハ記提ませリッ意新違どクづ選均くルばっ車精カタ閣夫り温買イドずえ報完ごせ国現アホ比組ぼ告2果際ろげみわ列芸博せゆみざ。"/>
+        </Border>
+
+        <Border Stroke="Black" StrokeThickness="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+                <FlexLayout Grid.Column="0"
+                            Grid.RowSpan="2"
+                            Padding="20"
+                            Wrap="Wrap"
+                            JustifyContent="SpaceBetween">
+                    <BoxView BackgroundColor="Blue"
+                             WidthRequest="100"
+                             HeightRequest="100"/>
+                    <BoxView BackgroundColor="Green"
+                             WidthRequest="100"
+                             HeightRequest="100"/>
+                    <BoxView BackgroundColor="Orange"
+                             WidthRequest="100"
+                             HeightRequest="100"/>
+                </FlexLayout>
+
+                <Border Stroke="Black" StrokeThickness="5"
+                        StrokeShape="RoundRectangle 10,0,0,0"
+                        Padding="10,0,0,150"
+                        Grid.Column="1"
+                        Grid.Row="0">
+                    <Label Text="6限憾もよ紙薩勝合能メヨ英鮮クけん一止ナエソ好事ス物7辞トリセヨ視開ハ子歩ー載扱伸し。"/>
+                </Border>
+
+                <Border Stroke="Black" StrokeThickness="5"
+                        StrokeShape="RoundRectangle 10,0,0,0"
+                        Padding="10,0,0,150"
+                        Grid.Column="1"
+                        Grid.Row="1">
+                    <Label Text="6限憾もよ紙薩勝合能メヨ英鮮クけん一止ナエソ好事ス物7辞トリセヨ視開ハ子歩ー載扱伸し。"/>
+                </Border>
+
+                <Border Stroke="Black" StrokeThickness="5"
+                        StrokeShape="RoundRectangle 10,0,0,0"
+                        Padding="10,0,0,150"
+                        Grid.Column="1"
+                        Grid.Row="2">
+                    <Label Text="6限憾もよ紙薩勝合能メヨ英鮮クけん一止ナエソ好事ス物7辞トリセヨ視開ハ子歩ー載扱伸し。"/>
+                </Border>
+
+                <Border Stroke="Black" StrokeThickness="5"
+                        StrokeShape="RoundRectangle 10,0,0,0"
+                        Padding="10,0,0,150"
+                        Grid.Column="1"
+                        Grid.Row="3">
+                    <Label Text="6限憾もよ紙薩勝合能メヨ英鮮クけん一止ナエソ好事ス物7辞トリセヨ視開ハ子歩ー載扱伸し。"/>
+                </Border>
+
+            </Grid>
+        </Border>
+
+        <Border Stroke="Black" StrokeThickness="5">
+            <Label/>
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>

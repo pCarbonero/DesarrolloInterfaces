@@ -6,7 +6,7 @@ namespace DAL
     {
         private static List<clsCandidato> listadoCandidatos = new List<clsCandidato>
         {
-            new clsCandidato(1, "Giovanni", "Rossi", "Via Roma 12", "Italia", new DateTime(1973, 6, 2), 45000),
+            //new clsCandidato(1, "Giovanni", "Rossi", "Via Roma 12", "Italia", new DateTime(1973, 6, 2), 45000),
             new clsCandidato(2, "Luca", "Bianchi", "Piazza Venezia 8", "Italia", new DateTime(1984, 3, 12), 50000),
             new clsCandidato(3, "Matteo", "Ricci", "Corso Italia 22", "Italia", new DateTime(1999, 4, 5), 47000),
             new clsCandidato(4, "Francesco", "Esposito", "Via Milano 5", "Italia", new DateTime(1988, 7, 14), 52000),
@@ -38,13 +38,66 @@ namespace DAL
         }
 
         /// <summary>
-        /// Funcion estatica que devuelve una lista de objetos de la clase clsCandidato
+        /// Funcion estatica que devuelve un listado de candidatos solicitads
         /// </summary>
+        /// <param name="nacionalidad"></param>
         /// <returns></returns>
-        public static List<clsCandidato> listadoCompletoCandidatosDAL()
+        public static List<clsCandidato> listadoSolicitadoCandidatos(string nacionalidad)
         {
-            return listadoCandidatos;
+            List<clsCandidato> listadoSolicitado = new List<clsCandidato>();
+
+            listadoSolicitado = listadoCandidatos.Where(per => per.Nacionalidad == nacionalidad).ToList();
+
+            return listadoSolicitado;
         }
+
+        /// <summary>
+        /// Funcion estatica que devuelve un listado de candidatos solicitads
+        /// </summary>
+        /// <param name="nacionalidad"></param>
+        /// <returns></returns>
+        public static List<clsCandidato> listadoSolicitadoCandidatos(string nacionalidad, int edadMin)
+        {
+            List<clsCandidato> listadoSolicitado = new List<clsCandidato>();
+
+            listadoSolicitado = listadoCandidatos.Where(per => per.Nacionalidad == nacionalidad
+                                                        && edadCandidato(per.FechaNac) >= edadMin).ToList();
+
+            return listadoSolicitado;
+        }
+
+        /// <summary>
+        /// Funcion estatica que devuelve un listado de candidatos solicitads
+        /// </summary>
+        /// <param name="nacionalidad"></param>
+        /// <returns></returns>
+        public static List<clsCandidato> listadoSolicitadoCandidatos(string nacionalidad, int edadMin, int edadMax)
+        {
+            List<clsCandidato> listadoSolicitado = new List<clsCandidato>();
+
+            listadoSolicitado = listadoCandidatos.Where(per => per.Nacionalidad == nacionalidad
+                                 && (edadCandidato(per.FechaNac) >= edadMin && edadCandidato(per.FechaNac) <= edadMax) ).ToList();
+
+            return listadoSolicitado;
+        }
+
+        /// <summary>
+        /// Funcion privada estatica que calcula una edad pasando una fecha de nacimiento
+        /// </summary>
+        /// <param name="fechaNac"></param>
+        /// <returns></returns>
+        private static int edadCandidato(DateTime fechaNac)
+        {
+            int edad = DateTime.Now.Year - fechaNac.Year;
+
+            if (fechaNac.DayOfYear < DateTime.Now.DayOfYear)
+            {
+                edad -= 1;
+            }
+
+            return edad;
+        }
+
 
         /// <summary>
         /// Funcion estatica que devuelve a un cadidato con un id

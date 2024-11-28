@@ -2,6 +2,7 @@
 using BL;
 using Entidades;
 using Examen_asp_Maui.Models;
+using Examen_asp_Maui.ViewModels.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Examen_asp_Maui.ViewModels
 {
-    public class clsSeleccionarMisionVM: INotifyPropertyChanged
+    public class clsSeleccionarMisionVM: Notify
     {
         #region atributos
         private ObservableCollection<clsCandidatoEdad> listaCandidatosEdad;
@@ -24,6 +25,7 @@ namespace Examen_asp_Maui.ViewModels
         private clsCandidatoEdad candidatoSeleccionado;
 
         private DelegateCommand detallesCommand;
+        private bool noAvailable;
 
         #endregion
 
@@ -51,13 +53,27 @@ namespace Examen_asp_Maui.ViewModels
         public clsCandidatoEdad CandidatoSeleccionado
         {
             get { return candidatoSeleccionado; }
-            set { value = candidatoSeleccionado; }
+            set 
+            {
+                candidatoSeleccionado = value;
+                NotifyPropertyChanged("CandidatoSeleccionado");
+                detallesCommand.RaiseCanExecuteChanged(); 
+            }
         }
 
         public DelegateCommand DetallesCommand
         {
             get { return detallesCommand; }
         }
+
+        public bool NoAvailable
+        {
+            get
+            {
+                return noAvailable;
+            }
+        }
+
         #endregion
 
         #region constructores
@@ -75,7 +91,11 @@ namespace Examen_asp_Maui.ViewModels
         /// </summary>
         public async void detallesExecute()
         {
+            Dictionary<string, object> diccionarioMandar = new System.Collections.Generic.Dictionary<string, object>();
 
+            diccionarioMandar.Add("Candidato", candidatoSeleccionado);
+
+            await Shell.Current.GoToAsync("///Detalles", diccionarioMandar);
         }
 
         /// <summary>
@@ -85,7 +105,7 @@ namespace Examen_asp_Maui.ViewModels
         public bool detallesCanExecute()
         {
             bool canExecute = false;
-            if (misionSeleccionada != null)
+            if (candidatoSeleccionado != null)
             {
                 canExecute = true;
             }
@@ -106,22 +126,32 @@ namespace Examen_asp_Maui.ViewModels
                     listaCandidatosEdad.Add(new clsCandidatoEdad(candidato));
                 }
                 NotifyPropertyChanged("ListaCandidatosEdad");
+                noAvailable = false;
+            }
+            catch (NoCandidatesAvailablesException ex)
+            {
+                listaCandidatosEdad.Clear();
+                noAvailable = true;
             }
             catch (Exception ex)
             {
-                await App.Current.MainPage.DisplayAlert("Alert", "You have been alerted", "OK");
+                await App.Current.MainPage.DisplayAlert("Alert", "Error inesperado", "OK");
+            }
+            finally
+            {
+                NotifyPropertyChanged("NoAvailable");
             }
         }
         #endregion
 
         #region Notify
-        public event PropertyChangedEventHandler? PropertyChanged;
+        /**public event PropertyChangedEventHandler? PropertyChanged;
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
             PropertyChanged?.Invoke(this, new
             PropertyChangedEventArgs(propertyName));
-        }
+        }*/
         #endregion
     }
 }

@@ -15,12 +15,6 @@ namespace BL
             return lista;
         }
 
-        public static List<clsCandidato> listadoCompletoCandidatosBL()
-        {
-            List<clsCandidato> lista = clsListadosDAL.listadoCompletoCandidatosDAL();
-            return lista;
-        }
-
         /// <summary>
         /// Funcion estatica que se encarga de filtrar la lista
         /// </summary>
@@ -31,24 +25,26 @@ namespace BL
         public static List<clsCandidato> listadoCandidatosParaMision(int dificultad)
         {
             List<clsCandidato> listaFiltrada = new List<clsCandidato>();
-            List<clsCandidato> listaCompleta = clsListadosBL.listadoCompletoCandidatosBL();
 
             switch (dificultad)
             {
-                case 1 or 2: 
-                    listaFiltrada = listaCompleta.Where(per => per.Nacionalidad == "Usa").ToList();
+                case 1 or 2:
+                    listaFiltrada = clsListadosDAL.listadoSolicitadoCandidatos("Usa");
                     break;
                 case 3:
-                    listaFiltrada = listaCompleta.Where(per => per.Nacionalidad == "Usa" && 
-                    (DateTime.Now.Year - per.FechaNac.Year - (DateTime.Now.DayOfYear < per.FechaNac.DayOfYear ? 1 : 0)) >= 40).ToList();
+                    listaFiltrada = clsListadosDAL.listadoSolicitadoCandidatos("Usa", 40);
                     break;
                 case 4:
-                    listaFiltrada = listaCompleta.Where(per => per.Nacionalidad == "Italia" && DateTime.Now.Year - per.FechaNac.Year < 45).ToList();
+                    listaFiltrada = clsListadosDAL.listadoSolicitadoCandidatos("Italia", 0, 45);
                     break;
                 case 5:
-                    listaFiltrada = listaCompleta.Where(per => per.Nacionalidad == "Italia" && 
-                    (DateTime.Now.Year - per.FechaNac.Year >= 45 && DateTime.Now.Year - per.FechaNac.Year <= 55)).ToList();
+                    listaFiltrada = clsListadosDAL.listadoSolicitadoCandidatos("Italia", 45, 55);
                     break;
+            }
+
+            if  (listaFiltrada.Count == 0)
+            {
+                throw new NoCandidatesAvailablesException();
             }
             return listaFiltrada;
         }
