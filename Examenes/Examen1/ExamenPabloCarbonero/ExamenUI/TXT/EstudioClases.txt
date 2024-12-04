@@ -1,0 +1,51 @@
+ENTIDADES
+
+	clsCandidato
+		+ int Id {get, set}
+		+ string nombre {get,set}
+
+DAL
+
+	clsListadosDAL
+		+ static List<clsCandidato> listadoCompletoCandidatosBL
+		+ static clsCandidato getCandidatoPorIdDAL(int id)
+
+BL
+
+	clsListadosBl
+		+ static List<clsCandidato> listadoCompletoCandidatosBL
+		+ static clsCandidato getCandidatoPorIdBL(int id)
+
+MODEL
+
+	clsCandidatoConImagen: clsCandidato
+		+ string Imagen {get}
+	
+VIEWMODEL
+
+clsPartidaVM
+	- int partidasJugadas
+	- List<clsCandidato> listaCandidatos
+	- List<clsCandidatoConImagen> listaOpcionesCorrectas (cuando salga una opcion se elimina de la lista)
+
+	+ List<clsCandidato> ListaOpciones {get}
+	+ clsCandidatoConImagen CandidatoCorrecto {get}
+	+ clsCandidato CandidatoElegido {get, set}
+	+ int Aciertos {get}
+	+ int Fallos {get}
+	+ bool Fin {get}
+
+
+	- void comprobarFin()
+	- void cargarNuevaPartida()
+	- void generarCandidatoCorrecto()
+	- void generarListaOpciones()
+	- void ComprobarResultado {
+	si partidasJuagdas == 5 {
+		si acierrtso >= 3 -> vistaVictoria
+		si fallos >= 3 -> vistaDerrota
+	}
+	}
+
+
+

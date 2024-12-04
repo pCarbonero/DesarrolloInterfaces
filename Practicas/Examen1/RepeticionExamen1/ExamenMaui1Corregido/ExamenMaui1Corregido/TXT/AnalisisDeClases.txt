@@ -1,0 +1,41 @@
+[ENTIDADES]
+	clsCandidato
+		+ int Id {get, set}
+		+ string Nombre {get, set}
+
+
+[DAL]
+	clsListadosDAL
+		+ static List<clsCandidato> listadoDeXCandidatosAleatoriosDAL(int numCandidatos)
+		+ static List<clsCandidato> listadoDeXCandidatosAleatoriosConCandidatoCorrectoDAL(int numCandidatos, idCandidatoCorrecto)
+		+ static clsCandidato candidatoPorIdDAL(int id)
+
+
+[BL]
+	clsListadosBL
+		+ static List<clsCandidato> listadoDe5CandidatosBL()
+		+ static clsCandidato candidatoPorIdBL(int id)
+		+ static List<clsCandidato> listadoCandidatosOpciones(int numCandidatos,  idCandidatoCorrecto)
+		+ static bool partidaTerminada (int numDeRondas, int numDePartidasjugadas)
+
+[MODEL]
+	clsCandidatoConFoto: clsCandidato
+		+ Foto {get{asignarFoto()}}
+		- string asignarFoto()
+	
+	clsPregunta
+		+ clsCandidatoConFoto candidatoAdivinar {get}
+		+ List<clsCandidato> listaDeOpciones {get}
+		+ clsCandidato candidatoElegido {get, set {comprobarRespuestaCorrecta()} }
+		+ bool respuestaCorrecta{get}
+		+ void comprobarRespuestaCorrecta()
+
+[VIEW MODEL]
+	clsJuegoVM
+		+ List<clsPregunta> ListadoDePreguntas {get}
+		+ int Aciertos {get}
+		+ int Fallos {get}
+		+ int PartidasJugadas {get}
+		+ clsPregunta preguntaSeleccionada {get}
+		+ clscandidato candidatoSeleccionado {get}
+

@@ -17,10 +17,6 @@
         </Grid.RowDefinitions>
         
         
-        <Picker Grid.Row="0"
-                ItemsSource="{Binding ListadoMisiones}"
-                ItemDisplayBinding="{Binding Nombre}"
-                SelectedItem="{Binding MisionSeleccionada}"/>
 
         <Label Grid.Row="1"
             IsVisible="{Binding NoAvailable}" Text="NO HAY CANDIDATOS DSIPONIBLES"/>

@@ -12,6 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Examen_asp_Maui.ViewModels
 {
     public class clsSeleccionarMisionVM: Notify

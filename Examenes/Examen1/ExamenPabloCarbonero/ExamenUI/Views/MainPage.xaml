@@ -1,13 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ExamenUI.ViewModels"
              x:Class="ExamenUI.MainPage">
+
+    <ContentPage.BindingContext>
+        <vm:clsPartidaVM/>
+    </ContentPage.BindingContext>
 
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
-            Spacing="25">
-            
+            Spacing="25"
+            HorizontalOptions="Center">
+
+            <Image Source="{Binding CandidatoCorrecto.Imagen}" MaximumHeightRequest="150"/>
+
+
+            <ListView ItemsSource="{Binding ListaOpciones}"
+                      SelectedItem="{Binding CandidatoElegido}"
+                      HorizontalOptions="Center">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Nombre}" HorizontalOptions="Center" FontSize="Large"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Reiniciar" IsVisible="{Binding Fin}" MaximumWidthRequest="100"/>
+
+            <Label Text="{Binding MensajeAcierto}" HorizontalOptions="Center" FontSize="Medium"/>
+ 
+
+            <HorizontalStackLayout>
+                <Label Text="Aciertos: "/>
+                <Label Text="{Binding Aciertos}"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Fallos: "/>
+                <Label Text="{Binding Fallos}"/>
+            </HorizontalStackLayout>
+
         </VerticalStackLayout>
     </ScrollView>
 
