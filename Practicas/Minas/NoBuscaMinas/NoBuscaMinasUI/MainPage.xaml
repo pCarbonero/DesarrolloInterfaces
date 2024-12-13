@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:NoBuscaMinasUI.ViewModel"
+             x:Class="NoBuscaMinasUI.MainPage">
+    <ContentPage.BindingContext>
+        <vm:MinasVM/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <Label Text="{Binding Aciertos}" TextColor="Green" FontSize="Large"/>
+        <Label Text="{Binding Fallos}" TextColor="Red" FontSize="Large"/>
+        <Grid>
+            <CollectionView ItemsSource="{Binding ListaCeldas}" SelectedItem="{Binding CeldaSeleccionada}" SelectionMode="Single">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="3" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Image Source="{Binding Imagen}" HeightRequest="150" WidthRequest="150" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </VerticalStackLayout>
+    
+
+</ContentPage>
