@@ -1,5 +1,6 @@
 ﻿using BL;
 using Modelos;
+using NoBuscaMinasUI.Modelos;
 using NoBuscaMinasUI.ViewModel.Utilities;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,8 @@ namespace NoBuscaMinasUI.ViewModel
     public class MinasVM: Notify
     {
         #region atributos
-        private ObservableCollection<clsCelda> listaCeldas;
+        //private ObservableCollection<clsCelda> listaCeldas;
+        private clsTablero tablero;
         private clsCelda celdaSeleccionada;
         private int dificultad = 1;
         private int aciertos = 0;
@@ -22,7 +24,12 @@ namespace NoBuscaMinasUI.ViewModel
         #endregion
 
         #region propiedades
-        public ObservableCollection<clsCelda> ListaCeldas { get { return listaCeldas; } set { listaCeldas = value; } }
+        //public ObservableCollection<clsCelda> ListaCeldas { get { return listaCeldas; } set { listaCeldas = value; } }
+        public clsTablero Tablero
+        {
+            get { return tablero; }
+            set { tablero = value; }
+        }
         public clsCelda CeldaSeleccionada 
         { 
             get { return celdaSeleccionada; } 
@@ -39,7 +46,9 @@ namespace NoBuscaMinasUI.ViewModel
 
         public MinasVM()
         {
-            listaCeldas = new ObservableCollection<clsCelda>(clsListadoBL.listadoDeCeldas(dificultad));
+            //listaCeldas = new ObservableCollection<clsCelda>(clsListadoBL.listadoDeCeldas(dificultad));
+            tablero = new clsTablero(dificultad);
+            numIntentos = clsListadoBL.numIntentosPorDificultad(dificultad);
         }
 
         /// <summary>
@@ -65,6 +74,11 @@ namespace NoBuscaMinasUI.ViewModel
                 }
                 numIntentos++;
             }
+        }
+
+        private void comprobarFinal()
+        {
+            
         }
     }
 }

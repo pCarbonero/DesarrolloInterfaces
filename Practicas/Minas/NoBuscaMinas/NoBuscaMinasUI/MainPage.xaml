@@ -10,7 +10,7 @@
         <Label Text="{Binding Aciertos}" TextColor="Green" FontSize="Large"/>
         <Label Text="{Binding Fallos}" TextColor="Red" FontSize="Large"/>
         <Grid>
-            <CollectionView ItemsSource="{Binding ListaCeldas}" SelectedItem="{Binding CeldaSeleccionada}" SelectionMode="Single">
+            <CollectionView ItemsSource="{Binding Tablero.ListaCeldas}" SelectedItem="{Binding CeldaSeleccionada}" SelectionMode="Single">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" Span="3" />
                 </CollectionView.ItemsLayout>

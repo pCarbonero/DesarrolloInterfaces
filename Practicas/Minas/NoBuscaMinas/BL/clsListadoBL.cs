@@ -12,17 +12,18 @@ namespace BL
         public static List<clsCelda> listadoDeCeldas (int dificultad)
         {
             List<clsCelda> lista = new List<clsCelda>();
+            int numBombas = numBombasPorDificultad(dificultad);
 
             switch (dificultad)
             {
                 case 1:
-                    lista = rellenarCeldas(9, 3);
+                    lista = rellenarCeldas(9, numBombas);
                     break;
                 case 2:
-                    lista = rellenarCeldas(9, 3);
+                    lista = rellenarCeldas(16, numBombas);
                     break;
                 case 3:
-                    lista = rellenarCeldas(9, 3);
+                    lista = rellenarCeldas(25, numBombas);
                     break;
             }
 
@@ -56,9 +57,79 @@ namespace BL
                     listaBombas.Add(celdaCambiar);
                 }
             }
-
-
             return lista;
+        }
+
+        /// <summary>
+        /// Funcion estatica que devuelve el numero de intentos que tiene el juagdor para completar un nivel
+        /// </summary>
+        /// <param name="dificultad"></param>
+        /// <returns></returns>
+        public static int numIntentosPorDificultad(int dificultad)
+        {
+            int num = 0;
+
+            switch(dificultad)
+            {
+                case 1:
+                    num = 8; 
+                    break;
+                case 2:
+                    num = 15;
+                    break;
+                case 3:
+                    num = 20;
+                    break;
+            }
+            return num;
+        }
+
+        /// <summary>
+        /// Funcion estatica que devuelve el numero de bombas que hay en la partidas
+        /// </summary>
+        /// <param name="dificultad"></param>
+        /// <returns></returns>
+        public static int numBombasPorDificultad(int dificultad)
+        {
+            int num = 0;
+
+            switch (dificultad)
+            {
+                case 1:
+                    num = 3;
+                    break;
+                case 2:
+                    num = 6;
+                    break;
+                case 3:
+                    num = 12;
+                    break;
+            }
+            return num;
+        }
+
+        /// <summary>
+        /// Funcion estatica que devuelve el numero de cartas correctas que hay en la partida
+        /// </summary>
+        /// <param name="dificultad"></param>
+        /// <returns></returns>
+        public static int numCartasCorrectasPorDificultad(int dificultad)
+        {
+            int num = 0;
+
+            switch (dificultad)
+            {
+                case 1:
+                    num = 6;
+                    break;
+                case 2:
+                    num = 10;
+                    break;
+                case 3:
+                    num = 13;
+                    break;
+            }
+            return num;
         }
     }
 }
