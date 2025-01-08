@@ -5,6 +5,10 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiPokemon", "MauiPokemon\MauiPokemon.csproj", "{CC8D033A-47B1-45FB-9154-ADE1B32DCAEE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{BE6A0CD3-20B3-42D0-BD41-8E5313F4C085}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ENT", "ENT\ENT.csproj", "{3F0FC664-6965-4BB7-9185-3FB445CAA613}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,14 @@ Global
 		{CC8D033A-47B1-45FB-9154-ADE1B32DCAEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC8D033A-47B1-45FB-9154-ADE1B32DCAEE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CC8D033A-47B1-45FB-9154-ADE1B32DCAEE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BE6A0CD3-20B3-42D0-BD41-8E5313F4C085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE6A0CD3-20B3-42D0-BD41-8E5313F4C085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE6A0CD3-20B3-42D0-BD41-8E5313F4C085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE6A0CD3-20B3-42D0-BD41-8E5313F4C085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F0FC664-6965-4BB7-9185-3FB445CAA613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F0FC664-6965-4BB7-9185-3FB445CAA613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F0FC664-6965-4BB7-9185-3FB445CAA613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F0FC664-6965-4BB7-9185-3FB445CAA613}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
