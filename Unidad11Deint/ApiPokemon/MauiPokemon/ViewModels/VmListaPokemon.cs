@@ -18,6 +18,8 @@ namespace MauiPokemon.ViewModels
         private clsRespuesta respuesta;
         private ObservableCollection<clsPokemon> listaPokemon;
         private DelegateCommand rellenarLista;
+        private DelegateCommand avanzar;
+        private DelegateCommand regresar;
         #endregion
 
         #region propiedades
@@ -31,12 +33,22 @@ namespace MauiPokemon.ViewModels
         {
             get { return rellenarLista; }
         }
+        public DelegateCommand Avanzar
+        {
+            get { return avanzar; }
+        }
+        public DelegateCommand Regresar
+        {
+            get { return regresar; }
+        }
         #endregion
 
         #region constructor
         public VmListaPokemon()
         {
             rellenarLista = new DelegateCommand(rellenarListaExecute);
+            avanzar = new DelegateCommand(avanzarExecute);
+            regresar = new DelegateCommand(regresarExecute);
         }
 
         public int Limit { get; set; }
@@ -61,6 +73,16 @@ namespace MauiPokemon.ViewModels
                 await Application.Current.MainPage.DisplayAlert("Error", "Intentalo más tarde.", "OK");
             }
             
+        }
+
+        public async void avanzarExecute()
+        {
+
+        }
+
+        public async void regresarExecute()
+        {
+
         }
         #endregion
     }
