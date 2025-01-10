@@ -2,8 +2,8 @@
 {
     public class clsPokemon
     {
-        public string name;
-        public string url;
+        public string name {get; set;}
+        public string url {get; set;}
 
         public clsPokemon(string name, string url)
         {

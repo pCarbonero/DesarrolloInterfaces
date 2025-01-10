@@ -10,7 +10,7 @@ namespace DAL.Utilities
     {
         public static string getUriBase()
         {
-            return "https://pokeapi.co/api/v2/pokemon";
+            return "https://pokeapi.co/api/v2";
         }
     }
 }

@@ -1,15 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MauiPokemon.ViewModels"
              x:Class="MauiPokemon.MainPage">
+    
+    <ContentPage.BindingContext>
+        <vm:VmListaPokemon/>
+    </ContentPage.BindingContext>
 
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-
-            <ListView>
-                
+            <Entry Text="{Binding Limit}" Placeholder="Limit"/>
+            <Entry Text="{Binding Offset}" Placeholder="Offset"/>
+            <Button Command="{Binding RellenarLista}"
+                    Text="Pokemone"/>
+            <ListView ItemsSource="{Binding ListaPokemon}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <VerticalStackLayout Padding="10">
+                                <Label Text="{Binding name}" FontSize="Medium"/>
+                                <Label Text="{Binding url}" FontSize="Small"/>
+                            </VerticalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
         </VerticalStackLayout>
     </ScrollView>
