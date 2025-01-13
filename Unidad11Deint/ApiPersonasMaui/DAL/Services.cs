@@ -1,6 +1,7 @@
 ﻿using DAL.Utilities;
 using Entidades;
 using Newtonsoft.Json;
+using System.Net;
 
 namespace DAL
 {
@@ -10,14 +11,14 @@ namespace DAL
         /// metodo que devuelve una lista de perlsonas
         /// </summary>
         /// <returns></returns>
-        public static async Task<List<clsPersona>> getListaPersonas(int limit = 0, int offset = 0)
+        public static async Task<List<clsPersona>> getListaPersonas()
         {
             //Pido la cadena de la Uri al método estático
             string miCadenaUrl = clsUriBase. getUriBase();
 
             Uri miUri = new Uri($"{miCadenaUrl}/personaapi");
 
-            List<clsPersona> listadoPokemon = new List<clsPersona>();
+            List<clsPersona> listadoPersonas = new List<clsPersona>();
 
 
             HttpClient mihttpClient;
@@ -41,14 +42,47 @@ namespace DAL
                     //JsonConvert necesita using Newtonsoft.Json;
 
                     //Es el paquete Nuget de Newtonsoft
-                    listadoPokemon = JsonConvert.DeserializeObject<List<clsPersona>>(textoJsonRespuesta);
+                    listadoPersonas = JsonConvert.DeserializeObject<List<clsPersona>>(textoJsonRespuesta);
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return listadoPokemon;
+            return listadoPersonas;
+        }
+
+        public static async Task<HttpStatusCode> deletePersona(clsPersona personaBorrar)
+        {
+            //Pido la cadena de la Uri al método estático
+            string miCadenaUrl = clsUriBase.getUriBase();
+
+            string datos;
+
+            HttpContent contenido;
+
+            Uri miUri = new Uri($"{miCadenaUrl}/personaapi/{personaBorrar.Id}");
+
+
+            HttpClient mihttpClient;
+            HttpResponseMessage miCodigoRespuesta = new HttpResponseMessage();
+
+            string textoJsonRespuesta;
+
+            //Instanciamos el cliente Http
+            mihttpClient = new HttpClient();
+
+            try
+            {
+                datos = JsonConvert.SerializeObject(personaBorrar);
+                contenido = new StringContent(datos, System.Text.Encoding.UTF8, "application/json");
+                miCodigoRespuesta = await mihttpClient.DeleteAsync(miUri);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return miCodigoRespuesta.StatusCode;
         }
     }
 }
