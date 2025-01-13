@@ -84,11 +84,13 @@ namespace ApiPersonasMaui.Viewmodels
             {
                 try
                 {
-                    Services.deletePersona(personaSeleccionada);
+                    await Services.deletePersona(personaSeleccionada);
+                    cargarLista();
+                    personaSeleccionada = null;
                 }
                 catch (Exception e)
                 {
-
+                    await Application.Current.MainPage.DisplayAlert("Error", "Intentalo más tarde.", "OK");
                 }
             }
         }

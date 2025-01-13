@@ -7,17 +7,21 @@
         <vm:VmListaPersonas/>
     </ContentPage.BindingContext>
 
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <HorizontalStackLayout>
-                <Button Command="{Binding GetPersonas}" Text="Mostrar Personas"/>
-                <Button Command="{Binding DeletePersonas}" Text="Borrar" BackgroundColor="Red"/>
-            </HorizontalStackLayout>
-            
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <HorizontalStackLayout Grid.Row="1">
+            <Button Command="{Binding GetPersonas}" Text="Mostrar Personas"/>
+            <Button Command="{Binding DeletePersonas}" Text="Borrar" BackgroundColor="Red"/>
+        </HorizontalStackLayout>
+
+        <ScrollView Grid.Row="0">
             <ListView ItemsSource="{Binding ListaPersonas}"
-                      SelectedItem="{Binding PersonaSeleccionada}">
+                  SelectedItem="{Binding PersonaSeleccionada}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -38,7 +42,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </VerticalStackLayout>
-    </ScrollView>
-
+        </ScrollView>
+    </Grid>
 </ContentPage>
