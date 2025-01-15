@@ -17,6 +17,7 @@
         <HorizontalStackLayout Grid.Row="1">
             <Button Command="{Binding GetPersonas}" Text="Mostrar Personas"/>
             <Button Command="{Binding DeletePersonas}" Text="Borrar" BackgroundColor="Red"/>
+            <Button Command="{Binding AddPersonaCommand}" Text="Añadir" BackgroundColor="Green"/>
         </HorizontalStackLayout>
 
         <ScrollView Grid.Row="0">

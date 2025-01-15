@@ -17,6 +17,7 @@ namespace ApiPersonasMaui.Viewmodels
         private ObservableCollection<clsPersona> listaPersonas;
         private DelegateCommand getPersonas;
         private DelegateCommand deletePersona;
+        private DelegateCommand addPersonaCommand;
         private clsPersona personaSeleccionada;
         #endregion
 
@@ -36,6 +37,11 @@ namespace ApiPersonasMaui.Viewmodels
             get { return deletePersona; }
         }
 
+        public DelegateCommand AddPersonaCommand
+        {
+            get { return addPersonaCommand; }
+        }
+
         public clsPersona PersonaSeleccionada
         {
             get { return personaSeleccionada; }
@@ -52,6 +58,7 @@ namespace ApiPersonasMaui.Viewmodels
         {
             getPersonas = new DelegateCommand(cargarLista);
             deletePersona = new DelegateCommand(deletePersonaExecute, deletePersonaCanExecute);
+            addPersonaCommand = new DelegateCommand(editPersonaExecute);
         }
 
         #endregion
@@ -104,6 +111,11 @@ namespace ApiPersonasMaui.Viewmodels
                 canExecute = true;
             }
             return canExecute;
+        }
+
+        private async void editPersonaExecute()
+        {
+            await Shell.Current.GoToAsync("///AddPersona");
         }
 
         #endregion
