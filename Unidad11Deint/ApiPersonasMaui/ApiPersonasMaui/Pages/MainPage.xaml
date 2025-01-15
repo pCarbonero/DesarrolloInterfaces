@@ -9,15 +9,29 @@
 
 
 
-    <Grid>
+    <Grid BackgroundColor="Beige">
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <HorizontalStackLayout Grid.Row="1">
-            <Button Command="{Binding GetPersonas}" Text="Mostrar Personas"/>
-            <Button Command="{Binding DeletePersonas}" Text="Borrar" BackgroundColor="Red"/>
-            <Button Command="{Binding AddPersonaCommand}" Text="Añadir" BackgroundColor="Green"/>
+        <HorizontalStackLayout Grid.Row="1" 
+                               HorizontalOptions="Center"
+                               Spacing="10">
+            
+            <Button Command="{Binding AddPersonaCommand}" Text="Añadir" 
+                    BackgroundColor="Green"
+                    MaximumHeightRequest="50"/>
+            <Button Text="Detalles" 
+                    BackgroundColor="Grey"
+                    MaximumHeightRequest="50"/>
+            <Button Command="{Binding GetPersonas}" Text="Mostrar Personas" 
+                    MaximumHeightRequest="50"/>
+            <Button Command="{Binding DeletePersonas}" Text="Borrar" 
+                    BackgroundColor="Red"
+                    MaximumHeightRequest="50"/>
+            <Button Text="Editar" 
+                    BackgroundColor="Grey"
+                    MaximumHeightRequest="50"/>
         </HorizontalStackLayout>
 
         <ScrollView Grid.Row="0">

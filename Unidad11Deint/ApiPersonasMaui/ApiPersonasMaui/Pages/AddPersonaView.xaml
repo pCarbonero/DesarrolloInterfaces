@@ -16,7 +16,7 @@
         <Entry Placeholder="Telefono" Text="{Binding Telefono}"/>
         <Entry Placeholder="Url de la imagen" Text="{Binding Foto}"/>
         
-        <DatePicker MinimumDate="01/01/1920" Date="{Binding NuevoFechaNacimiento, Mode=TwoWay}"/>
+        <DatePicker MinimumDate="01/01/1920" Date="{Binding FechaNacimiento, Mode=TwoWay}"/>
         
         <Picker ItemsSource="{Binding ListaDepartamentos}"
                 ItemDisplayBinding="{Binding Nombre}"

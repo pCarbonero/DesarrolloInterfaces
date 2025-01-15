@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,7 +24,7 @@ namespace ApiPersonasMaui.Viewmodels
         private string direccion;
         private string foto;
         private DateTime fechaNacimiento;
-        private int idDepartamento;
+        private int idDepartamento = 1;
 
         private clsDepartamento departamentoSeleccionado;
 
@@ -39,47 +40,47 @@ namespace ApiPersonasMaui.Viewmodels
         public string Nombre
         {
             get { return nombre; }
-            set { nombre = value; }
+            set { nombre = value; addPersonaCommand.RaiseCanExecuteChanged(); }
         }
 
         public string Apellidos
         {
             get { return apellidos; }
-            set { apellidos = value; }
+            set { apellidos = value; addPersonaCommand.RaiseCanExecuteChanged(); }
         }
 
         public string Telefono
         {
             get { return telefono; }
-            set { telefono = value; }
+            set { telefono = value; addPersonaCommand.RaiseCanExecuteChanged(); }
         }
 
         public string Direccion
         {
             get { return direccion; }
-            set { direccion = value; }
+            set { direccion = value; addPersonaCommand.RaiseCanExecuteChanged(); }
         }
 
         public string Foto
         {
             get { return foto; }
-            set { foto = value; }
+            set { foto = value; addPersonaCommand.RaiseCanExecuteChanged(); }
         }
         public DateTime FechaNacimiento
         {
             get { return fechaNacimiento; }
-            set { fechaNacimiento = value; }
+            set { fechaNacimiento = value; addPersonaCommand.RaiseCanExecuteChanged(); NotifyPropertyChanged("FechaNacimiento"); }
         }
         public int IdDepartamento
         {
             get { return idDepartamento; }
-            set { idDepartamento = value; }
+            set { idDepartamento = value; addPersonaCommand.RaiseCanExecuteChanged(); }
         }
 
         public clsDepartamento DepartamentoSeleccionado
         {
             get { return departamentoSeleccionado; }
-            set { departamentoSeleccionado = value; }
+            set { departamentoSeleccionado = value; addPersonaCommand.RaiseCanExecuteChanged(); }
         }
 
         public DelegateCommand AddPersonaCommand
@@ -102,7 +103,7 @@ namespace ApiPersonasMaui.Viewmodels
             bool canExecute = false;
 
             if (!String.IsNullOrEmpty(Nombre) && !String.IsNullOrEmpty(Apellidos) && !String.IsNullOrEmpty(Foto)
-                && !String.IsNullOrEmpty(Telefono) && Direccion != null && departamentoSeleccionado.Id != 0)
+                && !String.IsNullOrEmpty(Telefono) && Direccion != null /*&& (departamentoSeleccionado != null && departamentoSeleccionado.Id != 0)*/)
             {
                 canExecute = true;
             }
@@ -111,14 +112,24 @@ namespace ApiPersonasMaui.Viewmodels
         }
 
         private async void addPersonaExecute()
-        {  
+        {
+            HttpStatusCode respuesta;
             try
             {
-                idDepartamento = departamentoSeleccionado.Id;
+                //idDepartamento = departamentoSeleccionado.Id;
                 persona = new clsPersona(nombre, apellidos, telefono, direccion, foto, fechaNacimiento, idDepartamento);
 
-                await Services.addPersona(persona);
-                await Shell.Current.GoToAsync("///MainPage");
+                respuesta = await Services.addPersona(persona);
+
+                if (respuesta == HttpStatusCode.OK)
+                {
+                    await Shell.Current.GoToAsync("///MainPage");
+                }
+                else if (respuesta == HttpStatusCode.BadRequest)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error 400 Bad Request", "Intentalo más tarde.", "OK");
+                }
+                
             }
             catch (Exception ex)
             {
