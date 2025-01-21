@@ -94,6 +94,7 @@ namespace ApiPersonasMaui.Viewmodels
                     await Services.deletePersona(personaSeleccionada);
                     cargarLista();
                     personaSeleccionada = null;
+                    deletePersona.RaiseCanExecuteChanged();
                 }
                 catch (Exception e)
                 {

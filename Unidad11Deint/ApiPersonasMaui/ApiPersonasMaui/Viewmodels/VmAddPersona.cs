@@ -24,7 +24,7 @@ namespace ApiPersonasMaui.Viewmodels
         private string direccion;
         private string foto;
         private DateTime fechaNacimiento;
-        private int idDepartamento = 1;
+        private int idDepartamento;
 
         private clsDepartamento departamentoSeleccionado;
 
@@ -103,7 +103,7 @@ namespace ApiPersonasMaui.Viewmodels
             bool canExecute = false;
 
             if (!String.IsNullOrEmpty(Nombre) && !String.IsNullOrEmpty(Apellidos) && !String.IsNullOrEmpty(Foto)
-                && !String.IsNullOrEmpty(Telefono) && Direccion != null /*&& (departamentoSeleccionado != null && departamentoSeleccionado.Id != 0)*/)
+                && !String.IsNullOrEmpty(Telefono) && Direccion != null && (departamentoSeleccionado != null && departamentoSeleccionado.Id != 0))
             {
                 canExecute = true;
             }
@@ -116,7 +116,7 @@ namespace ApiPersonasMaui.Viewmodels
             HttpStatusCode respuesta;
             try
             {
-                //idDepartamento = departamentoSeleccionado.Id;
+                idDepartamento = departamentoSeleccionado.Id;
                 persona = new clsPersona(nombre, apellidos, telefono, direccion, foto, fechaNacimiento, idDepartamento);
 
                 respuesta = await Services.addPersona(persona);
