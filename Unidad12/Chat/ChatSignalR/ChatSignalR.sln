@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatBueno", "ChatBueno\Chat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatBueno.Client", "ChatBueno\ChatBueno.Client\ChatBueno.Client.csproj", "{C4ED58AD-0132-4757-A68F-FFC3E8BCFA49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{EA18311E-2850-4ED4-B50E-AC817B650A3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{EA18311E-2850-4ED4-B50E-AC817B650A3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatMaui", "ChatMaui\ChatMaui.csproj", "{3B642B97-2461-48A3-8CCB-BEA391035BA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,12 @@ Global
 		{EA18311E-2850-4ED4-B50E-AC817B650A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA18311E-2850-4ED4-B50E-AC817B650A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA18311E-2850-4ED4-B50E-AC817B650A3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B642B97-2461-48A3-8CCB-BEA391035BA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B642B97-2461-48A3-8CCB-BEA391035BA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B642B97-2461-48A3-8CCB-BEA391035BA6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3B642B97-2461-48A3-8CCB-BEA391035BA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B642B97-2461-48A3-8CCB-BEA391035BA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B642B97-2461-48A3-8CCB-BEA391035BA6}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
