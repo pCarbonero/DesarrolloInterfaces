@@ -6,12 +6,13 @@ namespace ChatMaui
 {
     public partial class MainPage : ContentPage
     {
-        public readonly HubConnection connection;
-        public ObservableCollection<clsMensajeUsuario> mensajes = new ObservableCollection<clsMensajeUsuario>();
+        /*public readonly HubConnection connection;
+        public ObservableCollection<clsMensajeUsuario> mensajes = new ObservableCollection<clsMensajeUsuario>();*/
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = this;
+            /*BindingContext = this;
+            ListaMensajes.ItemsSource = mensajes;
 
             connection = new HubConnectionBuilder().WithUrl("http://localhost:5250/chathub").Build();
 
@@ -24,9 +25,9 @@ namespace ChatMaui
             {
                 Dispatcher.Dispatch(async () =>
                 await connection.StartAsync());
-            });
+            });*/
         }
-        public async void OnSendClicked(object sender, EventArgs e)
+        /*public async void OnSendClicked(object sender, EventArgs e)
         {
             clsMensajeUsuario mensaje = new clsMensajeUsuario();
             mensaje.NombreUsuario = username.Text;
@@ -36,7 +37,7 @@ namespace ChatMaui
 
             username.Text = String.Empty;
             message.Text = String.Empty;
-        }
+        }*/
     }
 
 }
