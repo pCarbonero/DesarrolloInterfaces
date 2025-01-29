@@ -11,14 +11,24 @@
             Padding="30,0"
             Spacing="25">
 
-            <Entry Text="{Binding Usuario}"
+        <HorizontalStackLayout>
+            <Entry Text="{Binding Grupo}"
+                   Placeholder="Grupo"/>
+            <Button Text="Unirse"
+                    Command="{Binding JoinCommand}"/>
+            <Button Text="Abandonar"
+                    Command="{Binding LeaveCommand}" BackgroundColor="Red"/>
+        </HorizontalStackLayout>
+        
+            
+        <Entry Text="{Binding Usuario}"
                    Placeholder="User Name"/>
 
-            <Entry Text="{Binding Mensaje}"
-                   Placeholder="Message"/>
+        <Entry Text="{Binding Mensaje}"
+               Placeholder="Message"/>
 
-            <Button Text="Send"
-                    Command="{Binding EnviarCommand}"/>
+        <Button Text="Send"
+                Command="{Binding EnviarCommand}"/>
 
 
             <ListView ItemsSource="{Binding ListaMensajes}">
