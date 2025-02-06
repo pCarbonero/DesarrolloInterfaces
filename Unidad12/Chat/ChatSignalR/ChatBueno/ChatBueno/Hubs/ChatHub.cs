@@ -18,7 +18,7 @@ namespace ChatBueno.Hubs
 
         public async Task SendMessage(clsMensajeUsuario mensaje)
         {
-            await Clients.Group(mensaje.Grupo).SendAsync("ReceiveMessage", mensaje);
+            await Clients.Group(mensaje.Sala).SendAsync("ReceiveMessage", mensaje);
         }
     }
 }

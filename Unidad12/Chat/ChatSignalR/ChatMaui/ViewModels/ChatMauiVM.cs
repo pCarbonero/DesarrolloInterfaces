@@ -76,7 +76,7 @@ namespace ChatMaui.ViewModels
             joinCommand = new DelegateCommand(joinExecute, joinCanExecute);
             leaveCommand = new DelegateCommand(leaveExecute, leaveCanExecute);
             listaMensajes = new ObservableCollection<clsMensajeUsuario>();
-            connection = new HubConnectionBuilder().WithUrl("http://localhost:5250/chathub").Build();
+            connection = new HubConnectionBuilder().WithUrl("https://joseluisasp.azurewebsites.net/chathub").Build();
 
             connection.On<clsMensajeUsuario>("ReceiveMessage", (message) =>
             {
@@ -127,7 +127,7 @@ namespace ChatMaui.ViewModels
             {
                 canExecute = false;
             }
-            return canExecute;
+            return true;
         }
 
         /// <summary>

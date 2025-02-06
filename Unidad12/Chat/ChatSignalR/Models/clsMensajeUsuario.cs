@@ -3,24 +3,24 @@
     public class clsMensajeUsuario
     {
         #region Propiedades
-        public string NombreUsuario { get; set; }
-        public string MensajeUsuario { get; set; }
-        public string Grupo { get; set; }
+        public string Nombre { get; set; }
+        public string Mensaje { get; set; }
+        public string Sala { get; set; }
         #endregion
 
         #region constructores
         public clsMensajeUsuario() { }
         public clsMensajeUsuario(string nombreUsuario, string mensajeUsuario)
         {
-            NombreUsuario = nombreUsuario;
-            MensajeUsuario = mensajeUsuario;
+            Nombre = nombreUsuario;
+            Mensaje = mensajeUsuario;
         }
 
         public clsMensajeUsuario(string nombreUsuario, string mensajeUsuario, string grupo)
         {
-            NombreUsuario = nombreUsuario;
-            MensajeUsuario = mensajeUsuario;
-            Grupo = grupo;
+            Nombre = nombreUsuario;
+            Mensaje = mensajeUsuario;
+            Sala = grupo;
         }
 
         #endregion

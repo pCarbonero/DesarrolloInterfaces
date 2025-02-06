@@ -36,8 +36,8 @@
                     <DataTemplate>
                     <ViewCell>
                         <VerticalStackLayout>
-                            <Label Text="{Binding NombreUsuario}" FontSize="25" FontAttributes="Bold"/>
-                            <Label Text="{Binding MensajeUsuario}" FontSize="20"/>
+                            <Label Text="{Binding Nombre}" FontSize="25" FontAttributes="Bold"/>
+                            <Label Text="{Binding Mensaje}" FontSize="20"/>
                         </VerticalStackLayout>
                     </ViewCell>
                     </DataTemplate>
